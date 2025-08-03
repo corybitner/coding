@@ -1,0 +1,23 @@
+.aptean-block-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: visible;
+    opacity: 1;
+    background: #fff;
+    transition: visibility .3s,opacity .3s;
+}
+.aptean-block-container span{
+	margin-left: 12px;
+}
+.aptean-block-panel-button{
+	margin-bottom: 10px;
+}
+.aptean-block-icon{
+    color:#9c27b0;
+}
