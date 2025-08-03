@@ -151,10 +151,15 @@ class SimpleAudioPlayer {
                     e.preventDefault();
                     this.changeVolume(0.1);
                     break;
-                case 'ArrowDown':
-                    e.preventDefault();
-                    this.changeVolume(-0.1);
-                    break;
+                                       case 'ArrowDown':
+                           e.preventDefault();
+                           this.changeVolume(-0.1);
+                           break;
+                       case 'Enter':
+                       case 'NumpadEnter':
+                           e.preventDefault();
+                           this.rewindToStart();
+                           break;
             }
         });
     }
@@ -317,12 +322,16 @@ class SimpleAudioPlayer {
         this.setVolume(event);
     }
     
-    changeVolume(delta) {
-        this.volume = Math.max(0, Math.min(1, this.volume + delta));
-        this.audio.volume = this.volume;
-        this.isMuted = false;
-        this.updateVolumeDisplay();
-    }
+               changeVolume(delta) {
+               this.volume = Math.max(0, Math.min(1, this.volume + delta));
+               this.audio.volume = this.volume;
+               this.isMuted = false;
+               this.updateVolumeDisplay();
+           }
+
+           rewindToStart() {
+               this.audio.currentTime = 0;
+           }
     
     toggleMute() {
         this.isMuted = !this.isMuted;

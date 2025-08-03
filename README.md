@@ -71,7 +71,7 @@ https://example.com/song2.mp3
 | **P** | Previous track |
 | **N** | Next track |
 | **M** | Mute/Unmute |
-
+| **Enter** | Rewind to start of current track |
 | **S** | Cycle playback speed |
 | **←** | Seek backward 10s |
 | **→** | Seek forward 10s |
