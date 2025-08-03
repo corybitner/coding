@@ -1,6 +1,6 @@
-/* Simple Audio Player - Art Wide Theme */
+/* Simple Audio Player - Art Wide Theme - Custom */
 
-/* Icons (using simple Unicode characters for compatibility) */
+/* Modern Icons (using better Unicode characters) */
 .sap-icon {
     font-style: normal;
     display: inline-block;
@@ -12,7 +12,7 @@
 .sap-icon-pause::before { content: "⏸"; }
 .sap-icon-prev::before { content: "⏮"; }
 .sap-icon-next::before { content: "⏭"; }
-.sap-icon-volume::before { content: "🔊"; }
+.sap-icon-volume::before { content: "♪"; }
 .sap-icon-volume-mute::before { content: "🔇"; }
 .sap-icon-loop::before { content: "🔄"; }
 
@@ -35,17 +35,17 @@
 /* Main Player Section */
 .sap-player-main {
     display: flex;
-    padding: 24px;
-    gap: 24px;
+    padding: 20px;
+    gap: 20px;
     align-items: center;
 }
 
-/* Artwork Section */
+/* Artwork Section - Smaller size */
 .sap-artwork {
     position: relative;
-    width: 180px;
-    height: 180px;
-    border-radius: 12px;
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
     overflow: hidden;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     flex-shrink: 0;
@@ -77,22 +77,23 @@
 }
 
 .sap-play-pause-btn {
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 20px;
+    font-size: 16px;
     color: #333;
 }
 
 .sap-play-pause-btn:hover {
     background: #ffffff;
     transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Player Controls */
@@ -100,15 +101,15 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
 .sap-track-info {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .sap-track-title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     color: #333;
     margin-bottom: 4px;
@@ -116,7 +117,7 @@
 }
 
 .sap-track-artist {
-    font-size: 16px;
+    font-size: 14px;
     color: #666;
     font-weight: 400;
 }
@@ -133,7 +134,7 @@
 .sap-controls-bar {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
 }
 
 .sap-btn {
@@ -144,12 +145,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
     color: #666;
-    font-size: 18px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 40px;
-    height: 40px;
+    min-width: 36px;
+    height: 36px;
 }
 
 .sap-btn:hover {
@@ -166,41 +167,44 @@
     color: #ffffff;
 }
 
+/* Custom highlight color for main play button */
 .sap-play-pause-main {
-    background: #4f46e5;
+    background: #5382F6;
     color: white;
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    font-size: 20px;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    font-size: 18px;
 }
 
 .sap-play-pause-main:hover {
-    background: #4338ca;
+    background: #5382F6;
+    color: white;
     transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(83, 130, 246, 0.3);
 }
 
 .sap-speed-btn {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
-    min-width: 32px;
+    min-width: 28px;
 }
 
 /* Progress Container */
 .sap-progress-container {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     flex: 1;
-    min-width: 200px;
+    min-width: 180px;
 }
 
 .sap-time-current,
 .sap-time-total {
-    font-size: 12px;
+    font-size: 11px;
     color: #666;
     font-weight: 500;
-    min-width: 35px;
+    min-width: 32px;
 }
 
 .sap-dark .sap-time-current,
@@ -208,7 +212,7 @@
     color: #cccccc;
 }
 
-/* Seekbar */
+/* Seekbar with custom green progress color */
 .sap-seekbar {
     position: relative;
     height: 6px;
@@ -250,12 +254,13 @@
     background: #4b5563;
 }
 
+/* Custom green progress bar */
 .sap-seekbar-progress {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    background: #4f46e5;
+    background: #46BA74;
     width: 0%;
     transition: width 0.1s ease;
 }
@@ -264,9 +269,9 @@
     position: absolute;
     top: 50%;
     left: 0%;
-    width: 16px;
-    height: 16px;
-    background: #4f46e5;
+    width: 14px;
+    height: 14px;
+    background: #46BA74;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -282,12 +287,12 @@
 .sap-volume-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .sap-volume-slider {
     position: relative;
-    width: 80px;
+    width: 70px;
     height: 6px;
     background: #e5e7eb;
     border-radius: 3px;
@@ -312,12 +317,13 @@
     background: #374151;
 }
 
+/* Custom highlight color for volume */
 .sap-volume-level {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    background: #4f46e5;
+    background: #5382F6;
     width: 80%;
     border-radius: 3px;
     transition: width 0.1s ease;
@@ -327,9 +333,9 @@
     position: absolute;
     top: 50%;
     left: 80%;
-    width: 12px;
-    height: 12px;
-    background: #4f46e5;
+    width: 10px;
+    height: 10px;
+    background: #5382F6;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -355,7 +361,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 24px;
+    padding: 14px 20px;
     border-bottom: 1px solid #e5e7eb;
 }
 
@@ -365,7 +371,7 @@
 
 .sap-playlist-header h3 {
     margin: 0;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: #333;
 }
@@ -375,7 +381,7 @@
 }
 
 .sap-playlist-count {
-    font-size: 14px;
+    font-size: 13px;
     color: #666;
 }
 
@@ -385,30 +391,30 @@
 
 .sap-track-count {
     font-weight: 600;
-    color: #4f46e5;
+    color: #5382F6;
 }
 
 /* Playlist Items */
 .sap-playlist-items {
-    max-height: 300px;
+    max-height: 280px;
     overflow-y: auto;
 }
 
 .sap-playlist-item {
     display: flex;
     align-items: center;
-    padding: 12px 24px;
+    padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.2s ease;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .sap-playlist-item:hover {
-    background: rgba(79, 70, 229, 0.05);
+    background: rgba(83, 130, 246, 0.05);
 }
 
 .sap-playlist-item.active {
-    background: rgba(79, 70, 229, 0.1);
+    background: rgba(83, 130, 246, 0.1);
 }
 
 .sap-dark .sap-playlist-item {
@@ -416,17 +422,17 @@
 }
 
 .sap-dark .sap-playlist-item:hover {
-    background: rgba(79, 70, 229, 0.15);
+    background: rgba(83, 130, 246, 0.15);
 }
 
 .sap-dark .sap-playlist-item.active {
-    background: rgba(79, 70, 229, 0.2);
+    background: rgba(83, 130, 246, 0.2);
 }
 
 .sap-item-number {
-    width: 32px;
+    width: 28px;
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     color: #666;
     font-weight: 500;
 }
@@ -436,18 +442,18 @@
 }
 
 .sap-playlist-item.active .sap-item-number {
-    color: #4f46e5;
+    color: #5382F6;
     font-weight: 600;
 }
 
 .sap-item-info {
     flex: 1;
-    margin-left: 16px;
+    margin-left: 14px;
     min-width: 0;
 }
 
 .sap-item-title {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     color: #333;
     margin-bottom: 2px;
@@ -457,7 +463,7 @@
 }
 
 .sap-item-artist {
-    font-size: 12px;
+    font-size: 11px;
     color: #666;
     white-space: nowrap;
     overflow: hidden;
@@ -473,10 +479,10 @@
 }
 
 .sap-item-duration {
-    font-size: 12px;
+    font-size: 11px;
     color: #666;
     font-weight: 500;
-    margin-left: 16px;
+    margin-left: 14px;
 }
 
 .sap-dark .sap-item-duration {
@@ -488,11 +494,12 @@
     .sap-player-main {
         flex-direction: column;
         text-align: center;
+        padding: 16px;
     }
     
     .sap-artwork {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
     }
     
     .sap-controls-bar {
@@ -503,7 +510,7 @@
     .sap-progress-container {
         order: -1;
         width: 100%;
-        margin-bottom: 16px;
+        margin-bottom: 12px;
     }
     
     .sap-volume-container {
@@ -513,16 +520,16 @@
 
 @media (max-width: 480px) {
     .sap-player-main {
-        padding: 16px;
+        padding: 12px;
     }
     
     .sap-artwork {
-        width: 120px;
-        height: 120px;
+        width: 80px;
+        height: 80px;
     }
     
     .sap-track-title {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .sap-playlist-item {
@@ -532,7 +539,7 @@
 
 /* Loading States */
 .sap-loading .sap-seekbar-progress {
-    background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 50%, #4f46e5 100%);
+    background: linear-gradient(90deg, #46BA74 0%, #5382F6 50%, #46BA74 100%);
     background-size: 200% 100%;
     animation: loading-animation 1.5s infinite;
 }
@@ -547,14 +554,14 @@
 .sap-seekbar:focus,
 .sap-volume-slider:focus,
 .sap-playlist-item:focus {
-    outline: 2px solid #4f46e5;
+    outline: 2px solid #5382F6;
     outline-offset: 2px;
 }
 
 /* Playing State Indicator */
 .sap-playlist-item.playing .sap-item-number::before {
     content: "♪";
-    color: #4f46e5;
+    color: #5382F6;
     animation: pulse 1.5s infinite;
 }
 
