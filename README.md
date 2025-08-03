@@ -1,4 +1,4 @@
-# Simple Audio Player
+# Pocket Audio Player
 
 A lightweight WordPress audio player plugin with M3U playlist support, keyboard controls, and beautiful modern design. This is a slimmed-down version of the Modern Audio Player, removing bloat while keeping the core functionality you love.
 
@@ -15,7 +15,7 @@ A lightweight WordPress audio player plugin with M3U playlist support, keyboard 
 
 ## 📦 Installation
 
-1. **Upload the plugin files** to `/wp-content/plugins/simple-audio-player/`
+1. **Upload the plugin files** to `/wp-content/plugins/pocket-audio-player/`
 2. **Activate the plugin** through the 'Plugins' menu in WordPress
 3. **Upload your M3U files** to your WordPress media library
 4. **Use the shortcode** in posts, pages, or widgets
@@ -93,7 +93,7 @@ Elegant dark design for dark websites or user preference.
 ## 📁 File Structure
 
 ```
-simple-audio-player/
+pocket-audio-player/
 ├── simple-audio-player.php    # Main plugin file
 ├── css/
 │   └── player-styles.css      # Modern theme styles
@@ -110,7 +110,7 @@ Access the player instance:
 
 ```javascript
 // Get player instance
-const player = window.SimpleAudioPlayer;
+const player = window.PocketAudioPlayer;
 
 // Public methods
 player.getCurrentTrack();     // Get current track info
@@ -131,7 +131,7 @@ add_filter('upload_mimes', function($mimes) {
 
 ## 🆚 Comparison with Original
 
-| Feature | Original | Simple Audio Player |
+| Feature | Original | Pocket Audio Player |
 |---------|----------|-------------------|
 | **File Size** | 5,680+ lines | ~1,000 lines |
 | **Files** | 300+ files | 4 files |
@@ -183,7 +183,7 @@ http://stream.classical.fm:8000/classical
 
 1. **Export your playlists** as M3U files
 2. **Deactivate** Modern Audio Player
-3. **Install** Simple Audio Player
+3. **Install** Pocket Audio Player
 4. **Upload M3U files** to media library
 5. **Replace shortcodes** with `[simple_audio_playlist]`
 

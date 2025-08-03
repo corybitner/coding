@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: Simple Audio Player
-Plugin URI: https://github.com/corybitner/simple-audio-player
+Plugin Name: Pocket Audio Player
+Plugin URI: https://github.com/corybitner/pocket-audio-player
 Description: A lightweight audio player with M3U playlist support, keyboard controls, and modern design
 Version: 1.0.0
 Author: Cory Bitner
@@ -9,17 +9,17 @@ Author: Cory Bitner
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
-define('SAP_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('SAP_PLUGIN_PATH', plugin_dir_path(__FILE__));
+define('PAP_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('PAP_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
-class SimpleAudioPlayer {
+class PocketAudioPlayer {
     
     public function __construct() {
         add_action('init', array($this, 'init'));
         add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
         add_shortcode('simple_audio_playlist', array($this, 'render_playlist'));
-        add_action('wp_ajax_sap_upload_m3u', array($this, 'handle_m3u_upload'));
-        add_action('wp_ajax_nopriv_sap_upload_m3u', array($this, 'handle_m3u_upload'));
+                       add_action('wp_ajax_pap_upload_m3u', array($this, 'handle_m3u_upload'));
+               add_action('wp_ajax_nopriv_pap_upload_m3u', array($this, 'handle_m3u_upload'));
         register_activation_hook(__FILE__, array($this, 'activate'));
         register_deactivation_hook(__FILE__, array($this, 'deactivate'));
     }
@@ -36,12 +36,12 @@ class SimpleAudioPlayer {
     }
     
     public function enqueue_scripts() {
-        wp_enqueue_script('sap-player', SAP_PLUGIN_URL . 'js/simple-player.js', array('jquery'), '1.0.0', true);
-                   wp_enqueue_style('sap-player-styles', SAP_PLUGIN_URL . 'css/player-styles.css', array(), '1.0.0');
+                   wp_enqueue_script('pap-player', PAP_PLUGIN_URL . 'js/simple-player.js', array('jquery'), '1.0.0', true);
+           wp_enqueue_style('pap-player-styles', PAP_PLUGIN_URL . 'css/player-styles.css', array(), '1.0.0');
         
-        wp_localize_script('sap-player', 'sap_ajax', array(
+                   wp_localize_script('pap-player', 'pap_ajax', array(
             'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('sap_nonce')
+                           'nonce' => wp_create_nonce('pap_nonce')
         ));
     }
     
@@ -261,8 +261,8 @@ class SimpleAudioPlayer {
         return sprintf('%d:%02d', $minutes, $seconds);
     }
     
-    public function handle_m3u_upload() {
-        check_ajax_referer('sap_nonce', 'nonce');
+               public function handle_m3u_upload() {
+               check_ajax_referer('pap_nonce', 'nonce');
         
         if (!isset($_FILES['m3u_file'])) {
             wp_die('No file uploaded');
@@ -280,13 +280,13 @@ class SimpleAudioPlayer {
         ));
     }
     
-    public function activate() {
-        // Create upload directory for M3U files
-        $upload_dir = wp_upload_dir();
-        $sap_dir = $upload_dir['basedir'] . '/simple-audio-playlists';
+               public function activate() {
+               // Create upload directory for M3U files
+               $upload_dir = wp_upload_dir();
+               $pap_dir = $upload_dir['basedir'] . '/pocket-audio-playlists';
         
-        if (!file_exists($sap_dir)) {
-            wp_mkdir_p($sap_dir);
+                       if (!file_exists($pap_dir)) {
+                   wp_mkdir_p($pap_dir);
         }
     }
     
@@ -296,4 +296,4 @@ class SimpleAudioPlayer {
 }
 
 // Initialize the plugin
-new SimpleAudioPlayer();
+new PocketAudioPlayer();

@@ -1,4 +1,4 @@
-/* Simple Audio Player - Modern Theme */
+/* Pocket Audio Player - Modern Theme */
 
 /* Modern Icons */
 .sap-icon {
@@ -211,12 +211,12 @@
     color: #cccccc;
 }
 
-/* Seekbar with custom green progress color */
+/* Seekbar with custom green progress color - Thicker */
 .sap-seekbar {
     position: relative;
-    height: 6px;
+    height: 20px;
     background: #e5e7eb;
-    border-radius: 3px;
+    border-radius: 10px;
     flex: 1;
     cursor: pointer;
     overflow: hidden;
@@ -233,10 +233,12 @@
     width: 100%;
     height: 100%;
     background: #e5e7eb;
+    border-radius: 10px;
 }
 
 .sap-dark .sap-seekbar-bg {
     background: #374151;
+    border-radius: 10px;
 }
 
 .sap-seekbar-buffer {
@@ -246,11 +248,13 @@
     height: 100%;
     background: #d1d5db;
     width: 0%;
+    border-radius: 10px;
     transition: width 0.3s ease;
 }
 
 .sap-dark .sap-seekbar-buffer {
     background: #4b5563;
+    border-radius: 10px;
 }
 
 /* Custom green progress bar */
@@ -261,6 +265,7 @@
     height: 100%;
     background: #46BA74;
     width: 0%;
+    border-radius: 10px;
     transition: width 0.1s ease;
 }
 
@@ -268,14 +273,15 @@
     position: absolute;
     top: 50%;
     left: 0%;
-    width: 14px;
-    height: 14px;
+    width: 24px;
+    height: 24px;
     background: #46BA74;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(70, 186, 116, 0.3);
 }
 
 .sap-seekbar:hover .sap-seekbar-handle {
@@ -292,9 +298,9 @@
 .sap-volume-slider {
     position: relative;
     width: 70px;
-    height: 6px;
+    height: 20px;
     background: #e5e7eb;
-    border-radius: 3px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -309,11 +315,12 @@
     width: 100%;
     height: 100%;
     background: #e5e7eb;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 .sap-dark .sap-volume-bg {
     background: #374151;
+    border-radius: 10px;
 }
 
 /* Custom highlight color for volume */
@@ -324,7 +331,7 @@
     height: 100%;
     background: #5382F6;
     width: 80%;
-    border-radius: 3px;
+    border-radius: 10px;
     transition: width 0.1s ease;
 }
 
@@ -332,13 +339,14 @@
     position: absolute;
     top: 50%;
     left: 80%;
-    width: 10px;
-    height: 10px;
+    width: 18px;
+    height: 18px;
     background: #5382F6;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.3s ease;
+    box-shadow: 0 2px 8px rgba(83, 130, 246, 0.3);
 }
 
 .sap-volume-slider:hover .sap-volume-handle {
@@ -405,7 +413,12 @@
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.sap-playlist-item:nth-child(even) {
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .sap-playlist-item:hover {
