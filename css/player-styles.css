@@ -298,9 +298,9 @@
 .sap-volume-slider {
     position: relative;
     width: 70px;
-    height: 20px;
+    height: 8px;
     background: #e5e7eb;
-    border-radius: 10px;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -315,12 +315,12 @@
     width: 100%;
     height: 100%;
     background: #e5e7eb;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
 .sap-dark .sap-volume-bg {
     background: #374151;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
 /* Custom highlight color for volume */
@@ -331,7 +331,7 @@
     height: 100%;
     background: #5382F6;
     width: 80%;
-    border-radius: 10px;
+    border-radius: 4px;
     transition: width 0.1s ease;
 }
 
@@ -339,14 +339,14 @@
     position: absolute;
     top: 50%;
     left: 80%;
-    width: 18px;
-    height: 18px;
+    width: 12px;
+    height: 12px;
     background: #5382F6;
     border-radius: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.3s ease;
-    box-shadow: 0 2px 8px rgba(83, 130, 246, 0.3);
+    box-shadow: 0 2px 6px rgba(83, 130, 246, 0.3);
 }
 
 .sap-volume-slider:hover .sap-volume-handle {
@@ -410,11 +410,13 @@
 .sap-playlist-item {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 8px 20px;
+    height: 40px;
     cursor: pointer;
     transition: background-color 0.2s ease;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     background: rgba(0, 0, 0, 0.02);
+    box-sizing: border-box;
 }
 
 .sap-playlist-item:nth-child(even) {
@@ -442,11 +444,12 @@
 }
 
 .sap-item-number {
-    width: 28px;
+    width: 24px;
     text-align: center;
-    font-size: 13px;
+    font-size: 12px;
     color: #666;
     font-weight: 500;
+    flex-shrink: 0;
 }
 
 .sap-dark .sap-item-number {
@@ -460,18 +463,21 @@
 
 .sap-item-info {
     flex: 1;
-    margin-left: 14px;
+    margin-left: 12px;
     min-width: 0;
+    display: flex;
+    align-items: center;
+    line-height: 1;
 }
 
 .sap-item-title {
     font-size: 13px;
     font-weight: 500;
     color: #333;
-    margin-bottom: 2px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-right: 8px;
 }
 
 .sap-item-artist {
@@ -480,6 +486,12 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex-shrink: 0;
+}
+
+.sap-item-artist:before {
+    content: "- ";
+    color: #999;
 }
 
 .sap-dark .sap-item-title {
@@ -494,7 +506,8 @@
     font-size: 11px;
     color: #666;
     font-weight: 500;
-    margin-left: 14px;
+    margin-left: 12px;
+    flex-shrink: 0;
 }
 
 .sap-dark .sap-item-duration {
@@ -545,7 +558,8 @@
     }
     
     .sap-playlist-item {
-        padding: 8px 16px;
+        padding: 6px 16px;
+        height: 36px;
     }
 }
 
