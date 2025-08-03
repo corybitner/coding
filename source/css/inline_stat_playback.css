@@ -1,0 +1,92 @@
+.hap-equaliser-container {
+    height: 10px;
+    width: 17px;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  
+  .hap-equaliser-colour-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;
+    background: #eee;
+  }
+  
+  .hap-equaliser-column {
+    width: 2px;
+    float: left;
+    margin: 0 1px 0 0;
+    padding: 0;
+    height: 10px;
+    position: relative;
+  }
+  
+  .hap-equaliser-column:nth-child(1) .hap-equaliser-colour-bar {
+    animation: hap-equaliser-color-bar 2s 1s ease-out alternate infinite;
+  }
+  
+  .hap-equaliser-column:nth-child(2) .hap-equaliser-colour-bar {
+    animation: hap-equaliser-color-bar 2s 0.5s ease-out alternate infinite;
+  }
+  
+  .hap-equaliser-column:nth-child(3) .hap-equaliser-colour-bar {
+    animation: hap-equaliser-color-bar 2s 1.5s ease-out alternate infinite;
+  }
+  
+  .hap-equaliser-column:nth-child(4) .hap-equaliser-colour-bar {
+    animation: hap-equaliser-color-bar 2s 0.25s ease-out alternate infinite;
+  }
+  
+  .hap-equaliser-column:nth-child(5) .hap-equaliser-colour-bar {
+    animation: hap-equaliser-color-bar 2s 2s ease-out alternate infinite;
+  }
+  
+  .hap-equaliser-column:last-child {
+    margin-right: 0;
+  }
+  
+  @keyframes hap-equaliser-color-bar {
+    0% {
+      height: 1px;
+    }
+    10% {
+      height: 3px;
+    }
+    20% {
+      height: 5px;
+    }
+    30% {
+      height: 2px;
+    }
+    40% {
+      height: 7px;
+    }
+    50% {
+      height: 9px;
+    }
+    60% {
+      height: 3px;
+    }
+    70% {
+      height: 8px;
+    }
+    80% {
+      height: 5px;
+    }
+    90% {
+      height: 3px;
+    }
+    100% {
+      height: 1px;
+    }
+  }
+
+.hap-equaliser-container.hap-equaliser-paused .hap-equaliser-colour-bar {
+    animation-play-state: paused;
+}

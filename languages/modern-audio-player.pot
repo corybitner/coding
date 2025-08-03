@@ -1,0 +1,3163 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-15 17:10+0100\n"
+"PO-Revision-Date: 2021-02-15 17:10+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Eazy Po 0.9.5.3\n"
+
+#: map.php:515 map.php:516 map.php:517 map.php:518 map.php:519 map.php:520
+#: map.php:521 includes/widgets.php:12
+msgid "Modern Audio Player"
+msgstr ""
+
+#: map.php:515 includes/settings.php:40
+msgid "Global settings"
+msgstr ""
+
+#: map.php:516
+msgid "Player manager"
+msgstr ""
+
+#: map.php:517
+msgid "Playlist manager"
+msgstr ""
+
+#: map.php:518
+msgid "Ad manager"
+msgstr ""
+
+#: map.php:519
+msgid "Shortcodes"
+msgstr ""
+
+#: map.php:520 includes/edit_player.php:174
+msgid "Statistics"
+msgstr ""
+
+#: map.php:521 includes/add_media.php:364
+msgid "Genres"
+msgstr ""
+
+#: includes/add_media.php:34
+msgid "Select media type"
+msgstr ""
+
+#: includes/add_media.php:82 includes/edit_playlist.php:308
+msgid "Url"
+msgstr ""
+
+#: includes/add_media.php:85 includes/add_media.php:163
+#: includes/add_media.php:273 includes/add_media.php:285
+#: includes/add_media.php:302 includes/add_media.php:319
+#: includes/add_media.php:356 includes/ads.php:8 includes/ads.php:26
+#: includes/ads.php:55 includes/edit_playlist.php:97
+#: includes/edit_playlist.php:190
+msgid "Upload"
+msgstr ""
+
+#: includes/add_media.php:96
+msgid "Enter iTunes Music Podcast url, for example:"
+msgstr ""
+
+#: includes/add_media.php:98
+msgid "Enter Podcast url."
+msgstr ""
+
+#: includes/add_media.php:100
+msgid "Enter Soundcloud url."
+msgstr ""
+
+#: includes/add_media.php:102
+msgid "Enter folder ID which needs to be public, for example:"
+msgstr ""
+
+#: includes/add_media.php:104
+msgid ""
+"Place your folder with audio files in 'wp-content/uploads/map-file-dir' "
+"directory and enter folder name here. Or provide custom folder url on your "
+"server. Songs will be loaded from folder when player runs in page."
+msgstr ""
+
+#: includes/add_media.php:106
+msgid ""
+"Accordion mode is a special mode that creates an accordion playlist from "
+"each folder of audio files. Place your folder with audio files in 'wp-"
+"content/uploads/map-file-dir' directory and enter folder name here. Songs "
+"will be loaded from folder when player runs in page."
+msgstr ""
+
+#: includes/add_media.php:108
+msgid ""
+"Accordion mode is a special mode that creates an accordion playlist from "
+"each folder of audio files. Upload json file which contains data for "
+"accordion mode."
+msgstr ""
+
+#: includes/add_media.php:110
+msgid ""
+"Place your folder with audio files in 'wp-content/uploads/map-file-dir' "
+"directory and enter folder name here. Or provide custom folder url on your "
+"server. Songs will be loaded from folder now."
+msgstr ""
+
+#: includes/add_media.php:112
+msgid ""
+"Enter XML url. File needs to be located on the same domain. Example of XML "
+"file is located in plugin package."
+msgstr ""
+
+#: includes/add_media.php:114
+msgid ""
+"Enter json or txt url. File needs to be located on the same domain. Example "
+"of json file is located in plugin package."
+msgstr ""
+
+#: includes/add_media.php:116
+msgid "Add link to m3u8."
+msgstr ""
+
+#: includes/add_media.php:118
+msgid ""
+"Enter m3u url. Example of m3u playlist file is located in plugin package."
+msgstr ""
+
+#: includes/add_media.php:120
+msgid ""
+"Enter one or more video IDs separated by comma and no spacing. For example:"
+msgstr ""
+
+#: includes/add_media.php:122
+msgid "Enter playlist ID part. For example:"
+msgstr ""
+
+#: includes/add_media.php:145
+msgid "Is custom folder url"
+msgstr ""
+
+#: includes/add_media.php:147
+msgid "Select this if you are reading custom folder url on your server."
+msgstr ""
+
+#: includes/add_media.php:152
+msgid "Active accordion on start"
+msgstr ""
+
+#: includes/add_media.php:155 includes/shortcode_manager.php:760
+msgid ""
+"Active accordion on start (default is first). We use folder name if we want "
+"to specify which accordion to load on start."
+msgstr ""
+
+#: includes/add_media.php:160
+msgid "Audio preview url"
+msgstr ""
+
+#: includes/add_media.php:164
+msgid ""
+"Set short song preview to play instead of a full song. This can be used so "
+"users can preview the song before purchase."
+msgstr ""
+
+#: includes/add_media.php:169
+msgid "Shoutcast version"
+msgstr ""
+
+#: includes/add_media.php:172
+msgid "version 1"
+msgstr ""
+
+#: includes/add_media.php:173
+msgid "version 2"
+msgstr ""
+
+#: includes/add_media.php:179
+msgid "Shoutcast stream SID"
+msgstr ""
+
+#: includes/add_media.php:182 includes/shortcode_manager.php:658
+msgid "Shoutcast stream SID (default 1)."
+msgstr ""
+
+#: includes/add_media.php:187
+msgid "Mountpoint"
+msgstr ""
+
+#: includes/add_media.php:194
+msgid "Read ID3 tags"
+msgstr ""
+
+#: includes/add_media.php:196
+msgid "Get song information using ID3 tags."
+msgstr ""
+
+#: includes/add_media.php:201 includes/add_media.php:213
+msgid "Sort method"
+msgstr ""
+
+#: includes/add_media.php:208 includes/add_media.php:220
+msgid "Sort method when reading files from directory."
+msgstr ""
+
+#: includes/add_media.php:225
+msgid "Results limit"
+msgstr ""
+
+#: includes/add_media.php:228
+msgid "Number of results to retrieve (default:all)."
+msgstr ""
+
+#: includes/add_media.php:233
+msgid "Enable Load more"
+msgstr ""
+
+#: includes/add_media.php:235
+msgid ""
+"Load more songs on total scroll in player. Works with Youtube playlist, "
+"Soundcloud, Folder of audio files, Podcast. Works in conjuntion with Results "
+"limit option (for example, set Results limit 10 which will show 10 songs in "
+"playlist on start, then on total scroll, it will load another 10, and so "
+"on..) You can only use load more when you have one media in playlist, for "
+"example one Podcast or one Youtube playlist!"
+msgstr ""
+
+#: includes/add_media.php:240 includes/ad_manager.php:28
+#: includes/edit_playlist.php:307 includes/map_taxonomy.php:44
+#: includes/map_taxonomy.php:79 includes/map_taxonomy.php:124
+#: includes/map_taxonomy.php:159 includes/player_manager.php:26
+#: includes/playlist_manager.php:27 includes/shortcode_manager.php:670
+#: includes/statistics_display.php:295
+msgid "Title"
+msgstr ""
+
+#: includes/add_media.php:247 includes/edit_playlist.php:306
+#: includes/shortcode_manager.php:676 includes/statistics_display.php:293
+msgid "Artist"
+msgstr ""
+
+#: includes/add_media.php:254 includes/statistics_display.php:297
+msgid "Album"
+msgstr ""
+
+#: includes/add_media.php:261 includes/map_taxonomy.php:45
+#: includes/map_taxonomy.php:86 includes/map_taxonomy.php:125
+#: includes/map_taxonomy.php:166 includes/shortcode_manager.php:103
+#: includes/shortcode_manager.php:374 includes/shortcode_manager.php:630
+#: includes/shortcode_manager.php:682 includes/shortcode_manager.php:810
+#: includes/shortcode_manager.php:896 includes/shortcode_manager.php:1114
+msgid "Description"
+msgstr ""
+
+#: includes/add_media.php:263
+msgid "HTML allowed"
+msgstr ""
+
+#: includes/add_media.php:264
+msgid "Check this if you use HTML in description."
+msgstr ""
+
+#: includes/add_media.php:269
+msgid "Thumbnail"
+msgstr ""
+
+#: includes/add_media.php:274 includes/add_media.php:286
+#: includes/add_media.php:357 includes/ads.php:10 includes/ads.php:28
+#: includes/ads.php:57 includes/edit_playlist.php:98
+#: includes/edit_playlist.php:191
+msgid "Remove"
+msgstr ""
+
+#: includes/add_media.php:281
+msgid "Default thumbnail"
+msgstr ""
+
+#: includes/add_media.php:287
+msgid ""
+"Default thumbnail path for songs that do not have thumbnail available with "
+"api."
+msgstr ""
+
+#: includes/add_media.php:292
+msgid "Thumbnail alt text"
+msgstr ""
+
+#: includes/add_media.php:299
+msgid "Lyrics file"
+msgstr ""
+
+#: includes/add_media.php:303
+msgid ""
+"Add lyrics file (same domain restriction applies). Use txt extension if you "
+"cannot upload custom extension (lrc, vtt, srt)."
+msgstr ""
+
+#: includes/add_media.php:308
+msgid "Duration"
+msgstr ""
+
+#: includes/add_media.php:311
+msgid "Duration in seconds."
+msgstr ""
+
+#: includes/add_media.php:316
+msgid "Download url"
+msgstr ""
+
+#: includes/add_media.php:321
+msgid "Playlist item download link."
+msgstr ""
+
+#: includes/add_media.php:326
+msgid "Url link"
+msgstr ""
+
+#: includes/add_media.php:334
+msgid "Playlist item url link."
+msgstr ""
+
+#: includes/add_media.php:339
+msgid "Start time in seconds"
+msgstr ""
+
+#: includes/add_media.php:346
+msgid "End time in seconds"
+msgstr ""
+
+#: includes/add_media.php:353 includes/edit_player.php:196
+msgid "Video"
+msgstr ""
+
+#: includes/add_media.php:359
+msgid "Add video which will be syncronized with audio."
+msgstr ""
+
+#: includes/add_media.php:367 includes/edit_playlist.php:114
+msgid "Add genre"
+msgstr ""
+
+#: includes/add_media.php:372 includes/map_taxonomy.php:36
+#: includes/map_taxonomy.php:116
+msgid "Keywords"
+msgstr ""
+
+#: includes/add_media.php:375 includes/edit_playlist.php:122
+msgid "Add keywords"
+msgstr ""
+
+#: includes/add_media.php:386 includes/ad_manager.php:97
+#: includes/edit_playlist.php:269 includes/player_manager.php:173
+#: includes/playlist_manager.php:101 includes/statistics_display.php:360
+msgid "Cancel"
+msgstr ""
+
+#: includes/add_media.php:387
+msgid "Save changes"
+msgstr ""
+
+#: includes/ads.php:2
+msgid "Ad pre"
+msgstr ""
+
+#: includes/ads.php:4 includes/shortcode_manager.php:819
+msgid "Add audio ad that plays before main song starts."
+msgstr ""
+
+#: includes/ads.php:11 includes/ads.php:29 includes/ads.php:58
+#: includes/edit_playlist.php:329 includes/edit_playlist.php:364
+#: includes/statistics_display.php:293 includes/statistics_display.php:295
+#: includes/statistics_display.php:297 includes/statistics_display.php:299
+#: includes/statistics_display.php:301 includes/statistics_display.php:303
+#: includes/statistics_display.php:305 includes/statistics_display.php:307
+msgid "Sort"
+msgstr ""
+
+#: includes/ads.php:15 includes/ads.php:33 includes/ads.php:62
+msgid "Add another"
+msgstr ""
+
+#: includes/ads.php:20
+msgid "Ad mid"
+msgstr ""
+
+#: includes/ads.php:22
+msgid ""
+"Add audio ad that plays in specified interval while main song plays. Drag up "
+"and down to sort them."
+msgstr ""
+
+#: includes/ads.php:38 includes/shortcode_manager.php:831
+msgid "Ad mid interval (miliseconds)"
+msgstr ""
+
+#: includes/ads.php:44
+msgid "Repeat ad every x miliseconds"
+msgstr ""
+
+#: includes/ads.php:49
+msgid "Ad end"
+msgstr ""
+
+#: includes/ads.php:51 includes/shortcode_manager.php:843
+msgid "Add audio ad that plays after main song ends."
+msgstr ""
+
+#: includes/ads.php:67
+msgid "Randomize ads"
+msgstr ""
+
+#: includes/ads.php:69 includes/shortcode_manager.php:849
+msgid ""
+"Shuffle ad order for each individual ad type. For example, if you have "
+"multiple ad pre, it will shuffle them."
+msgstr ""
+
+#: includes/ad_manager.php:12
+msgid "Manage ads"
+msgstr ""
+
+#: includes/ad_manager.php:14
+msgid ""
+"In this section you can upload audio to serve as ads. Edit title field to "
+"change ad name."
+msgstr ""
+
+#: includes/ad_manager.php:18 includes/edit_playlist.php:242
+#: includes/player_manager.php:16 includes/playlist_manager.php:16
+msgid "Delete selected"
+msgstr ""
+
+#: includes/ad_manager.php:19 includes/player_manager.php:17
+#: includes/playlist_manager.php:17
+msgid "Search by title.."
+msgstr ""
+
+#: includes/ad_manager.php:29 includes/edit_playlist.php:311
+#: includes/map_taxonomy.php:46 includes/map_taxonomy.php:126
+#: includes/player_manager.php:28 includes/playlist_manager.php:28
+#: includes/statistics_display.php:309
+msgid "Actions"
+msgstr ""
+
+#: includes/ad_manager.php:42 includes/edit_ad.php:44
+msgid "Edit ad"
+msgstr ""
+
+#: includes/ad_manager.php:42 includes/edit_playlist.php:349
+#: includes/edit_playlist.php:384 includes/player_manager.php:43
+#: includes/playlist_manager.php:46
+msgid "Edit"
+msgstr ""
+
+#: includes/ad_manager.php:46
+msgid "Duplicate ad"
+msgstr ""
+
+#: includes/ad_manager.php:46 includes/player_manager.php:45
+#: includes/playlist_manager.php:48
+msgid "Duplicate"
+msgstr ""
+
+#: includes/ad_manager.php:49
+msgid "Export ad"
+msgstr ""
+
+#: includes/ad_manager.php:49 includes/player_manager.php:48
+#: includes/playlist_manager.php:51
+msgid "Export"
+msgstr ""
+
+#: includes/ad_manager.php:52 includes/edit_playlist.php:353
+#: includes/edit_playlist.php:388 includes/map_taxonomy.php:63
+#: includes/map_taxonomy.php:143 includes/player_manager.php:51
+#: includes/playlist_manager.php:54
+msgid "Delete"
+msgstr ""
+
+#: includes/ad_manager.php:62
+msgid "Add New ad section"
+msgstr ""
+
+#: includes/ad_manager.php:66
+msgid "Import Ad"
+msgstr ""
+
+#: includes/ad_manager.php:88
+msgid "Ad section title"
+msgstr ""
+
+#: includes/ad_manager.php:89
+msgid "Enter ad title"
+msgstr ""
+
+#: includes/ad_manager.php:98
+msgid "Add ad"
+msgstr ""
+
+#: includes/edit_ad.php:33
+msgid "Ad section created!"
+msgstr ""
+
+#: includes/edit_ad.php:53
+msgid "Ad section"
+msgstr ""
+
+#: includes/edit_ad.php:57
+msgid ""
+"Audio advertizing options. In this section you can upload audio to serve as "
+"ads. 3 types of audio ads exist. Ad can play before main song starts (ad "
+"pre), ad can play during main song play in specified interval (ad mid), ad "
+"can play after main song ends (ad end)."
+msgstr ""
+
+#: includes/edit_ad.php:79
+msgid "Back to Ad list"
+msgstr ""
+
+#: includes/edit_ad.php:81 includes/edit_player.php:1204
+#: includes/settings.php:183
+msgid "Save Changes"
+msgstr ""
+
+#: includes/edit_player.php:41
+msgid "Loop playlist"
+msgstr ""
+
+#: includes/edit_player.php:42
+msgid "Loop single song"
+msgstr ""
+
+#: includes/edit_player.php:43
+msgid "Loop off (stop on playlist end)"
+msgstr ""
+
+#: includes/edit_player.php:47
+msgid "auto"
+msgstr ""
+
+#: includes/edit_player.php:48
+msgid "metadata"
+msgstr ""
+
+#: includes/edit_player.php:49
+msgid "none"
+msgstr ""
+
+#: includes/edit_player.php:53
+msgid "No sort applied"
+msgstr ""
+
+#: includes/edit_player.php:54
+msgid "Title ascending"
+msgstr ""
+
+#: includes/edit_player.php:55
+msgid "Title descending"
+msgstr ""
+
+#: includes/edit_player.php:59
+msgid "thumbnail"
+msgstr ""
+
+#: includes/edit_player.php:60 includes/edit_player.php:73
+msgid "title"
+msgstr ""
+
+#: includes/edit_player.php:61
+msgid "description"
+msgstr ""
+
+#: includes/edit_player.php:62
+msgid "duration"
+msgstr ""
+
+#: includes/edit_player.php:63
+msgid "date"
+msgstr ""
+
+#: includes/edit_player.php:67
+msgid "plays"
+msgstr ""
+
+#: includes/edit_player.php:68
+msgid "likes"
+msgstr ""
+
+#: includes/edit_player.php:69
+msgid "downloads"
+msgstr ""
+
+#: includes/edit_player.php:74
+msgid "artist"
+msgstr ""
+
+#: includes/edit_player.php:78
+msgid "Load more"
+msgstr ""
+
+#: includes/edit_player.php:79
+msgid "Add more"
+msgstr ""
+
+#: includes/edit_player.php:80 includes/shortcode_manager.php:59
+msgid "None"
+msgstr ""
+
+#: includes/edit_player.php:84
+msgid "Description over thumbnail"
+msgstr ""
+
+#: includes/edit_player.php:85
+msgid "Description below thumbnail"
+msgstr ""
+
+#: includes/edit_player.php:86
+msgid "Description right of thumbnail"
+msgstr ""
+
+#: includes/edit_player.php:143
+msgid "Player created!"
+msgstr ""
+
+#: includes/edit_player.php:155 includes/player_manager.php:43
+msgid "Edit player"
+msgstr ""
+
+#: includes/edit_player.php:163
+msgid "Settings"
+msgstr ""
+
+#: includes/edit_player.php:170 includes/edit_playlist.php:84
+msgid "General"
+msgstr ""
+
+#: includes/edit_player.php:171
+msgid "Radio"
+msgstr ""
+
+#: includes/edit_player.php:172
+msgid "Ads"
+msgstr ""
+
+#: includes/edit_player.php:173
+msgid "Google Analytics"
+msgstr ""
+
+#: includes/edit_player.php:175
+msgid "Language"
+msgstr ""
+
+#: includes/edit_player.php:176
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/edit_player.php:177
+msgid "Custom Javascript"
+msgstr ""
+
+#: includes/edit_player.php:185
+msgid "Options"
+msgstr ""
+
+#: includes/edit_player.php:186
+msgid "Pagination"
+msgstr ""
+
+#: includes/edit_player.php:187
+msgid "Buttons"
+msgstr ""
+
+#: includes/edit_player.php:188
+msgid "Social sharing"
+msgstr ""
+
+#: includes/edit_player.php:189
+msgid "Playback"
+msgstr ""
+
+#: includes/edit_player.php:190
+msgid "Keyboard"
+msgstr ""
+
+#: includes/edit_player.php:191
+msgid "Playlist"
+msgstr ""
+
+#: includes/edit_player.php:192
+msgid "Playlist items"
+msgstr ""
+
+#: includes/edit_player.php:193
+msgid "Search field"
+msgstr ""
+
+#: includes/edit_player.php:194
+msgid "Continous playback"
+msgstr ""
+
+#: includes/edit_player.php:195
+msgid "Lyrics"
+msgstr ""
+
+#: includes/edit_player.php:197
+msgid "Accordion"
+msgstr ""
+
+#: includes/edit_player.php:198
+msgid "Popup window"
+msgstr ""
+
+#: includes/edit_player.php:199
+msgid "Advanced"
+msgstr ""
+
+#: includes/edit_player.php:213
+msgid "Active song to start with"
+msgstr ""
+
+#: includes/edit_player.php:216
+msgid ""
+"Enter number, counting starts from zero (-1 = no song loaded, 0 = first "
+"song, 1 = second song etc..)"
+msgstr ""
+
+#: includes/edit_player.php:221
+msgid "Default volume"
+msgstr ""
+
+#: includes/edit_player.php:224
+msgid "Enter number between 0 and 1."
+msgstr ""
+
+#: includes/edit_player.php:229
+msgid "Sort order of songs"
+msgstr ""
+
+#: includes/edit_player.php:236
+msgid ""
+"Sort order of songs in the player on start. No sort order specified means no "
+"sort will be applied (tracks will be displayed as listed in backend)."
+msgstr ""
+
+#: includes/edit_player.php:241
+msgid "Get player artwork"
+msgstr ""
+
+#: includes/edit_player.php:243
+msgid ""
+"This will try to fetch player artwork from Itunes if current song has no "
+"artwork."
+msgstr ""
+
+#: includes/edit_player.php:248
+msgid "Soundcloud player artwork cover size"
+msgstr ""
+
+#: includes/edit_player.php:259
+msgid "Soundcloud thumb quality in playlist"
+msgstr ""
+
+#: includes/edit_player.php:266
+msgid "Apply Soundcloud thumb quality on playlist thumbs."
+msgstr ""
+
+#: includes/edit_player.php:271
+msgid "Player opened on start"
+msgstr ""
+
+#: includes/edit_player.php:273 includes/edit_player.php:297
+#: includes/edit_player.php:304 includes/edit_player.php:311
+#: includes/edit_player.php:318 includes/edit_player.php:325
+#: includes/edit_player.php:332 includes/edit_player.php:347
+#: includes/edit_player.php:354 includes/edit_player.php:361
+#: includes/edit_player.php:368 includes/edit_player.php:375
+#: includes/edit_player.php:382 includes/edit_player.php:389
+#: includes/edit_player.php:396 includes/edit_player.php:403
+#: includes/edit_player.php:628 includes/edit_player.php:697
+#: includes/edit_player.php:704 includes/edit_player.php:744
+#: includes/edit_player.php:858 includes/edit_player.php:873
+#: includes/edit_player.php:1075 includes/edit_player.php:1097
+msgid "Yes"
+msgstr ""
+
+#: includes/edit_player.php:278
+msgid "Hide player until music start"
+msgstr ""
+
+#: includes/edit_player.php:280
+msgid ""
+"This will completely hide player until music first starts. Note that music "
+"autoplay is not possible without user interaction, so this can only be used "
+"when user clicks a button in page to play music. Note: if Youtube is used "
+"this feature is not available."
+msgstr ""
+
+#: includes/edit_player.php:290
+msgid ""
+"Choose which elements to use in player (Note: some skins may not have all "
+"elements available)."
+msgstr ""
+
+#: includes/edit_player.php:295
+msgid "Use skip backward button (X seconds)"
+msgstr ""
+
+#: includes/edit_player.php:302
+msgid "Use skip forward button (X seconds)"
+msgstr ""
+
+#: includes/edit_player.php:309
+msgid "Use AB loop"
+msgstr ""
+
+#: includes/edit_player.php:316
+msgid "Use shuffle button"
+msgstr ""
+
+#: includes/edit_player.php:323
+msgid "Use loop button"
+msgstr ""
+
+#: includes/edit_player.php:330
+msgid "Use playback rate"
+msgstr ""
+
+#: includes/edit_player.php:345
+msgid "Use social sharing buttons"
+msgstr ""
+
+#: includes/edit_player.php:352
+msgid "Use Facebook share"
+msgstr ""
+
+#: includes/edit_player.php:359
+msgid "Use Twitter share"
+msgstr ""
+
+#: includes/edit_player.php:366
+msgid "Use Tumblr share"
+msgstr ""
+
+#: includes/edit_player.php:373
+msgid "Use WhatsApp share"
+msgstr ""
+
+#: includes/edit_player.php:380
+msgid "Use Reddit share"
+msgstr ""
+
+#: includes/edit_player.php:387
+msgid "Use Digg share"
+msgstr ""
+
+#: includes/edit_player.php:394
+msgid "Use LinkedIn share"
+msgstr ""
+
+#: includes/edit_player.php:401
+msgid "Use Pinterest share"
+msgstr ""
+
+#: includes/edit_player.php:416
+msgid "Use keyboard navigation for controling playback."
+msgstr ""
+
+#: includes/edit_player.php:418
+msgid "Use keyboard buttons to toggle player actions."
+msgstr ""
+
+#: includes/edit_player.php:421
+msgid "Supported keyboard controls:"
+msgstr ""
+
+#: includes/edit_player.php:423
+msgid "Left arrow = skip backward"
+msgstr ""
+
+#: includes/edit_player.php:424
+msgid "Right arrow = skip forward"
+msgstr ""
+
+#: includes/edit_player.php:425
+msgid "Up arrow = increase volume"
+msgstr ""
+
+#: includes/edit_player.php:426
+msgid "Down arrow = descrease volume"
+msgstr ""
+
+#: includes/edit_player.php:427
+msgid "m = toggle mute"
+msgstr ""
+
+#: includes/edit_player.php:428
+msgid "Page Up = previous song"
+msgstr ""
+
+#: includes/edit_player.php:429
+msgid "Page Down = next song"
+msgstr ""
+
+#: includes/edit_player.php:430
+msgid "Space = toggle playback (pause / play)"
+msgstr ""
+
+#: includes/edit_player.php:431
+msgid "r = restart"
+msgstr ""
+
+#: includes/edit_player.php:441
+msgid "Modifier key"
+msgstr ""
+
+#: includes/edit_player.php:444
+msgid "Add modifier key (Shift, Alt, or Control) to be used as double keys."
+msgstr ""
+
+#: includes/edit_player.php:466
+msgid "Auto play"
+msgstr ""
+
+#: includes/edit_player.php:468
+msgid "Audio autoplay"
+msgstr ""
+
+#: includes/edit_player.php:473
+msgid "Auto play after first"
+msgstr ""
+
+#: includes/edit_player.php:475
+msgid "Auto play media after first song has been manually started."
+msgstr ""
+
+#: includes/edit_player.php:480
+msgid "Preload media attribute"
+msgstr ""
+
+#: includes/edit_player.php:490
+msgid "Random play"
+msgstr ""
+
+#: includes/edit_player.php:492
+msgid "Randomize playback in playlist."
+msgstr ""
+
+#: includes/edit_player.php:497
+msgid "Loop state"
+msgstr ""
+
+#: includes/edit_player.php:504
+msgid "Loop playlist, loop current audio, or off (on playlist end no loop)"
+msgstr ""
+
+#: includes/edit_player.php:509
+msgid "Stop on song end"
+msgstr ""
+
+#: includes/edit_player.php:511
+msgid "Use this option to stop playback on sound end."
+msgstr ""
+
+#: includes/edit_player.php:516
+msgid "Default skip time"
+msgstr ""
+
+#: includes/edit_player.php:519
+msgid "Default skip time for skip backward / skip forward buttons (seconds)."
+msgstr ""
+
+#: includes/edit_player.php:524
+msgid "Playback rate"
+msgstr ""
+
+#: includes/edit_player.php:531
+msgid "Minimum playback rate"
+msgstr ""
+
+#: includes/edit_player.php:538
+msgid "Maximum playback rate"
+msgstr ""
+
+#: includes/edit_player.php:545
+msgid "Disable song skip"
+msgstr ""
+
+#: includes/edit_player.php:547
+msgid ""
+"Disable song change (seek, previous, next, click another song). With this "
+"option selected user has to listen full song and cannot change song."
+msgstr ""
+
+#: includes/edit_player.php:552
+msgid "Use audio preview in player"
+msgstr ""
+
+#: includes/edit_player.php:554
+msgid ""
+"Play short song preview snippet in player instead of full song. Requires "
+"short audio preview set on song."
+msgstr ""
+
+#: includes/edit_player.php:559
+msgid "Toggle playback between multiple instances in page"
+msgstr ""
+
+#: includes/edit_player.php:561
+msgid ""
+"For multiple players in page, pause other players when one player is started."
+msgstr ""
+
+#: includes/edit_player.php:574
+msgid "Use playlist in player"
+msgstr ""
+
+#: includes/edit_player.php:576
+msgid "Hide visible playlist from the player."
+msgstr ""
+
+#: includes/edit_player.php:581
+msgid "Use playlist scroll"
+msgstr ""
+
+#: includes/edit_player.php:583 includes/shortcode_manager.php:246
+msgid "Use scrollbar in playlist."
+msgstr ""
+
+#: includes/edit_player.php:588
+msgid "Playlist scroll theme"
+msgstr ""
+
+#: includes/edit_player.php:595 includes/shortcode_manager.php:252
+msgid "Scroll themes:"
+msgstr ""
+
+#: includes/edit_player.php:600 includes/shortcode_manager.php:210
+#: includes/shortcode_manager.php:216
+msgid "Playlist opened on start"
+msgstr ""
+
+#: includes/edit_player.php:602
+msgid "Playlist opened on start."
+msgstr ""
+
+#: includes/edit_player.php:615
+msgid "Select playlist items style"
+msgstr ""
+
+#: includes/edit_player.php:626 includes/shortcode_manager.php:258
+msgid "Use numbers in front of titles in playlist"
+msgstr ""
+
+#: includes/edit_player.php:633
+msgid "Playlist item multiline width"
+msgstr ""
+
+#: includes/edit_player.php:636 includes/shortcode_manager.php:331
+msgid ""
+"Player width at which icons in playlist items (link, download, statistics "
+"icons) go into second line to make room for playlist titles."
+msgstr ""
+
+#: includes/edit_player.php:641
+msgid "Playlist item content"
+msgstr ""
+
+#: includes/edit_player.php:655
+msgid ""
+"Select content to show in playlist items. Description, duration, date may be "
+"available for Podcast, Soundcloud, Youtube."
+msgstr ""
+
+#: includes/edit_player.php:660
+msgid "Order of title and artist"
+msgstr ""
+
+#: includes/edit_player.php:669
+msgid "Change order of title and artist display (which comes first)."
+msgstr ""
+
+#: includes/edit_player.php:674
+msgid "Limit description text"
+msgstr ""
+
+#: includes/edit_player.php:678
+msgid ""
+"Limit number of characters in playlist item description text (useful for "
+"Podcast, Soundcloud, Youtube). 0 means no limit."
+msgstr ""
+
+#: includes/edit_player.php:683
+msgid "Total scroll action"
+msgstr ""
+
+#: includes/edit_player.php:690
+msgid ""
+"Action to apply when user scrolls to the end. Used for list skin. Use load "
+"more for pagination with Youtube or Podcast. Use Add more to load more songs "
+"from this playlist. Or no action."
+msgstr ""
+
+#: includes/edit_player.php:695
+msgid ""
+"Create download icons in playlist (if download is available) for podcast, "
+"sondcloud, folder and google drive"
+msgstr ""
+
+#: includes/edit_player.php:702
+msgid ""
+"Create link icons in playlist for podcast, sondcloud, folder and google drive"
+msgstr ""
+
+#: includes/edit_player.php:717
+msgid "Use pagination"
+msgstr ""
+
+#: includes/edit_player.php:720
+msgid ""
+"Use pagination with Grid layout. Pagination buttons will be created below "
+"the grid."
+msgstr ""
+
+#: includes/edit_player.php:726
+msgid "Pagination items per page"
+msgstr ""
+
+#: includes/edit_player.php:729
+msgid "How many items to display per page."
+msgstr ""
+
+#: includes/edit_player.php:742
+msgid "Use search song field"
+msgstr ""
+
+#: includes/edit_player.php:749
+msgid "Custom Search field"
+msgstr ""
+
+#: includes/edit_player.php:752 includes/shortcode_manager.php:349
+msgid ""
+"Use your own input search field for the playlist items and specify dom "
+"selector (ID/Classname) for this element."
+msgstr ""
+
+#: includes/edit_player.php:757
+msgid "Search description in playlist"
+msgstr ""
+
+#: includes/edit_player.php:759
+msgid ""
+"Search description in playlist when using search field. By default only "
+"title is used for search."
+msgstr ""
+
+#: includes/edit_player.php:772
+msgid "Use continous playback"
+msgstr ""
+
+#: includes/edit_player.php:774
+msgid "Remember playback position when going to different page."
+msgstr ""
+
+#: includes/edit_player.php:787
+msgid "Auto open lyrics dialog on song start"
+msgstr ""
+
+#: includes/edit_player.php:789 includes/edit_player.php:796
+#: includes/edit_player.php:813 includes/edit_player.php:841
+msgid "Yes."
+msgstr ""
+
+#: includes/edit_player.php:794
+msgid "Auto scroll lyrics container"
+msgstr ""
+
+#: includes/edit_player.php:811
+msgid "Use video controls"
+msgstr ""
+
+#: includes/edit_player.php:818
+msgid "Use fullscreen button in video"
+msgstr ""
+
+#: includes/edit_player.php:820 includes/edit_player.php:827
+#: includes/edit_player.php:834
+msgid "Use video controls needs to be true for this to work."
+msgstr ""
+
+#: includes/edit_player.php:825
+msgid "Use picture in picture button in video"
+msgstr ""
+
+#: includes/edit_player.php:832
+msgid "Use download button in video"
+msgstr ""
+
+#: includes/edit_player.php:839
+msgid "Auto open video dialog on song start"
+msgstr ""
+
+#: includes/edit_player.php:851
+msgid "Settings when loading audio files with accordion mode."
+msgstr ""
+
+#: includes/edit_player.php:856 includes/shortcode_manager.php:343
+msgid "Allow only one opened accordion item at once."
+msgstr ""
+
+#: includes/edit_player.php:871
+msgid "Use button to open popup window"
+msgstr ""
+
+#: includes/edit_player.php:878
+msgid "Document title in popup window"
+msgstr ""
+
+#: includes/edit_player.php:885 includes/shortcode_manager.php:139
+msgid "Auto open popup window"
+msgstr ""
+
+#: includes/edit_player.php:887
+msgid ""
+"Auto open popup window on page load or by clicking DOM selector (Advanced "
+"tab)"
+msgstr ""
+
+#: includes/edit_player.php:902
+msgid "Breakpoints"
+msgstr ""
+
+#: includes/edit_player.php:908
+msgid ""
+"Add responsive breakpoints which will be used with css, separated by comma."
+msgstr ""
+
+#: includes/edit_player.php:913
+msgid "Clear dialog cache on player start"
+msgstr ""
+
+#: includes/edit_player.php:915
+msgid "Clear dialog position and size in browser (lyrics, video)"
+msgstr ""
+
+#: includes/edit_player.php:920 includes/shortcode_manager.php:118
+msgid "DOM selector"
+msgstr ""
+
+#: includes/edit_player.php:923
+msgid ""
+"Specify dom selector (ID/Classname) which will open player on click. In this "
+"case player will be initalized when user clicks on selector."
+msgstr ""
+
+#: includes/edit_player.php:928
+msgid "Additional classes"
+msgstr ""
+
+#: includes/edit_player.php:931
+msgid ""
+"Add additional classes for the player (separated by space). You can target "
+"specific element in the player using this format .foo|my-class (this will "
+"attach my-class to element .foo). Use comma to target multiple elements: ."
+"foo|my-class,.doh|class-a,class-b Without the pipe symbol class will be "
+"added to the top player element."
+msgstr ""
+
+#: includes/edit_player.php:936
+msgid "Display all playlists in page"
+msgstr ""
+
+#: includes/edit_player.php:938
+msgid ""
+"If true, display all playlists in page (from Playlist manager) when player "
+"runs. Useful if you use playlist selector or if you want to use API method "
+"loadPlaylist (playlist-ID) on run-time. If false, display just active "
+"playlist from shortcode."
+msgstr ""
+
+#: includes/edit_player.php:943
+msgid "Hide Youtube after start"
+msgstr ""
+
+#: includes/edit_player.php:945
+msgid ""
+"Hide youtube player after video has started. By default Youtube player is "
+"shown above player artwork cover area."
+msgstr ""
+
+#: includes/edit_player.php:950
+msgid "Link icon in playlist"
+msgstr ""
+
+#: includes/edit_player.php:953
+msgid ""
+"Note: skin brona uses Material icons by default. Other skins use svg icons. "
+"Tip: you can add text instead of icon, for example enter \"BUY\" and then "
+"style it with css and you have a text button."
+msgstr ""
+
+#: includes/edit_player.php:958
+msgid "Download icon in playlist"
+msgstr ""
+
+#: includes/edit_player.php:976
+msgid "Song statistics options"
+msgstr ""
+
+#: includes/edit_player.php:981
+msgid "Use song statistics"
+msgstr ""
+
+#: includes/edit_player.php:983
+msgid "Count plays, likes, downloads."
+msgstr ""
+
+#: includes/edit_player.php:988
+msgid "Statistic icons to show in player"
+msgstr ""
+
+#: includes/edit_player.php:1001 includes/shortcode_manager.php:294
+msgid ""
+"Select Statistic icons to display in playlist items. Use song statistics "
+"option need to be true."
+msgstr ""
+
+#: includes/edit_player.php:1011
+msgid "Options for radio can be adjusted here."
+msgstr ""
+
+#: includes/edit_player.php:1016
+msgid "Get radio artwork"
+msgstr ""
+
+#: includes/edit_player.php:1018
+msgid ""
+"Get radio artwork for the player. If you want to specify your own artwork "
+"set this to false."
+msgstr ""
+
+#: includes/edit_player.php:1022
+msgid "Default song artist text"
+msgstr ""
+
+#: includes/edit_player.php:1025
+msgid "Default song artist when current playing song in not available."
+msgstr ""
+
+#: includes/edit_player.php:1029
+msgid "Default song title text"
+msgstr ""
+
+#: includes/edit_player.php:1032
+msgid "Default song title when current playing song in not available."
+msgstr ""
+
+#: includes/edit_player.php:1036
+msgid "Enable cors"
+msgstr ""
+
+#: includes/edit_player.php:1038
+msgid ""
+"Enable cors for getting radio data. You can try to set this to false if you "
+"have Shoutcast SSL stream for example, or some radio stations simply work "
+"without cors."
+msgstr ""
+
+#: includes/edit_player.php:1042
+msgid "Cors url"
+msgstr ""
+
+#: includes/edit_player.php:1045
+msgid ""
+"Proxy url for getting radio data. You can enter multiple cors urls for "
+"backup separated by comma."
+msgstr ""
+
+#: includes/edit_player.php:1049
+msgid "Use cors for audio"
+msgstr ""
+
+#: includes/edit_player.php:1051
+msgid ""
+"This will add cors infront of radio url for radio playback. You can use this "
+"option for example if you have SSL website with HTTPS proxy url."
+msgstr ""
+
+#: includes/edit_player.php:1055
+msgid "Last played interval"
+msgstr ""
+
+#: includes/edit_player.php:1058
+msgid ""
+"Last played interval at which current playing song and song history is "
+"retrieved (miliseconds). It is advised not to set this too low so it doesnt "
+"query often."
+msgstr ""
+
+#: includes/edit_player.php:1068
+msgid ""
+"Audio advertizing options. 3 types of audio ads exist. Ad before main song "
+"starts (ad pre), ad during main song play in specified interval (ad mid), ad "
+"after main song ends (ad end). Audio ads can be defined in Ads section "
+"(create ads for all songs in playlist) or every song can have its own ads "
+"defined in Edit Playlist / Edit Media."
+msgstr ""
+
+#: includes/edit_player.php:1073 includes/shortcode_manager.php:837
+msgid "Pause main audio while audio ad mid plays."
+msgstr ""
+
+#: includes/edit_player.php:1080
+msgid "Message shown during advertizing"
+msgstr ""
+
+#: includes/edit_player.php:1095
+msgid "Use Google analytics"
+msgstr ""
+
+#: includes/edit_player.php:1101
+msgid "Google analytics tracking ID"
+msgstr ""
+
+#: includes/edit_player.php:1104
+#, php-format
+msgid "Get tracking ID <a href=\"%s\" target=\"_blank\">here</a>"
+msgstr ""
+
+#: includes/edit_player.php:1117
+msgid "Choose player language"
+msgstr ""
+
+#: includes/edit_player.php:1126
+msgid "Edit language"
+msgstr ""
+
+#: includes/edit_player.php:1202
+msgid "Back to Player list"
+msgstr ""
+
+#: includes/edit_playlist.php:5
+msgid "Playlist created!"
+msgstr ""
+
+#: includes/edit_playlist.php:67 includes/playlist_manager.php:46
+msgid "Edit playlist"
+msgstr ""
+
+#: includes/edit_playlist.php:74
+msgid "Playlist options"
+msgstr ""
+
+#: includes/edit_playlist.php:85
+msgid "Global options"
+msgstr ""
+
+#: includes/edit_playlist.php:93
+msgid "Playlist thumbnail"
+msgstr ""
+
+#: includes/edit_playlist.php:99
+msgid "Set playlist thumbnail"
+msgstr ""
+
+#: includes/edit_playlist.php:104
+msgid "Playlist description"
+msgstr ""
+
+#: includes/edit_playlist.php:111
+msgid "Playlist genre"
+msgstr ""
+
+#: includes/edit_playlist.php:119
+msgid "Playlist keywords"
+msgstr ""
+
+#: includes/edit_playlist.php:127
+msgid "Prefix media url"
+msgstr ""
+
+#: includes/edit_playlist.php:130
+msgid ""
+"Add prefix url to your relative media urls (applies to audio urls and "
+"thumbnails)."
+msgstr ""
+
+#: includes/edit_playlist.php:135
+msgid "Retrieve more on total scroll"
+msgstr ""
+
+#: includes/edit_playlist.php:137
+msgid ""
+"Retrieve more songs from this playlist on total scroll in player (when user "
+"scrolls to playlist bottom). Works in conjuntion with Retrieve more limit "
+"(for example, set Retrieve more limit 10 which will show 10 songs in "
+"playlist on start, then on total scroll, it will load another 10, and so on."
+msgstr ""
+
+#: includes/edit_playlist.php:142
+msgid "Retrieve more limit"
+msgstr ""
+
+#: includes/edit_playlist.php:145
+msgid "Number of songs to retrieve on total scroll"
+msgstr ""
+
+#: includes/edit_playlist.php:181
+msgid "Global playlist options will be applied to every song in playlist."
+msgstr ""
+
+#: includes/edit_playlist.php:186
+msgid "Global thumbnail"
+msgstr ""
+
+#: includes/edit_playlist.php:192
+msgid ""
+"Make this thumbnail global for this playlist. This means all tracks in this "
+"playlist will use this thumbnail."
+msgstr ""
+
+#: includes/edit_playlist.php:197
+msgid "Start time"
+msgstr ""
+
+#: includes/edit_playlist.php:200
+msgid "Enter media start time in seconds."
+msgstr ""
+
+#: includes/edit_playlist.php:205
+msgid "End time"
+msgstr ""
+
+#: includes/edit_playlist.php:208
+msgid "Enter media end time in seconds."
+msgstr ""
+
+#: includes/edit_playlist.php:221
+msgid "Save playlist options"
+msgstr ""
+
+#: includes/edit_playlist.php:232
+msgid ""
+"From this section you can create and edit playlist tracks. Drag the tracks "
+"by ID column to change sort order in which they appear in the player. You "
+"can also sort by ID, title and artist field."
+msgstr ""
+
+#: includes/edit_playlist.php:243
+msgid "Copy selected"
+msgstr ""
+
+#: includes/edit_playlist.php:245
+msgid "Move selected"
+msgstr ""
+
+#: includes/edit_playlist.php:248
+msgid "Update song order in playlist"
+msgstr ""
+
+#: includes/edit_playlist.php:248
+msgid "Update order"
+msgstr ""
+
+#: includes/edit_playlist.php:249 includes/statistics_display.php:271
+msgid "Search song.."
+msgstr ""
+
+#: includes/edit_playlist.php:257
+msgid "Select destination playlist:"
+msgstr ""
+
+#: includes/edit_playlist.php:268
+msgid "Ok"
+msgstr ""
+
+#: includes/edit_playlist.php:280 includes/statistics_display.php:278
+msgid "Songs per page"
+msgstr ""
+
+#: includes/edit_playlist.php:282 includes/statistics_display.php:280
+msgid "Set"
+msgstr ""
+
+#: includes/edit_playlist.php:294
+msgid "Playlist tracks"
+msgstr ""
+
+#: includes/edit_playlist.php:303
+msgid "Sort by created date"
+msgstr ""
+
+#: includes/edit_playlist.php:304
+msgid "Type"
+msgstr ""
+
+#: includes/edit_playlist.php:305 includes/playlist_manager.php:26
+msgid "Thumb"
+msgstr ""
+
+#: includes/edit_playlist.php:306
+msgid "Sort by artist"
+msgstr ""
+
+#: includes/edit_playlist.php:307
+msgid "Sort by title"
+msgstr ""
+
+#: includes/edit_playlist.php:309
+msgid "Category"
+msgstr ""
+
+#: includes/edit_playlist.php:310
+msgid "Tags"
+msgstr ""
+
+#: includes/edit_playlist.php:349 includes/edit_playlist.php:384
+msgid "Edit media"
+msgstr ""
+
+#: includes/edit_playlist.php:353 includes/edit_playlist.php:388
+msgid "Delete media"
+msgstr ""
+
+#: includes/edit_playlist.php:404
+msgid "Back to Playlist list"
+msgstr ""
+
+#: includes/edit_playlist.php:406
+msgid "Add Song"
+msgstr ""
+
+#: includes/edit_playlist.php:408
+msgid "Upload multiple Songs"
+msgstr ""
+
+#: includes/map_taxonomy.php:20
+msgid "Genre and keywords"
+msgstr ""
+
+#: includes/map_taxonomy.php:22
+msgid ""
+"In this section you can create any number of genres and keywords. These can "
+"later be attached to songs. Click fields to edit them."
+msgstr ""
+
+#: includes/map_taxonomy.php:26 includes/map_taxonomy.php:108
+msgid "Search.."
+msgstr ""
+
+#: includes/map_taxonomy.php:74
+msgid "Add genre. Only letters and numbers allowed."
+msgstr ""
+
+#: includes/map_taxonomy.php:94 includes/map_taxonomy.php:174
+msgid "Add"
+msgstr ""
+
+#: includes/map_taxonomy.php:154
+msgid "Add keyword. Only letters and numbers allowed."
+msgstr ""
+
+#: includes/player_manager.php:10
+msgid "Manage Players"
+msgstr ""
+
+#: includes/player_manager.php:12
+msgid ""
+"From this section you can create and edit players. Edit title field to "
+"change player name."
+msgstr ""
+
+#: includes/player_manager.php:27
+msgid "Preset"
+msgstr ""
+
+#: includes/player_manager.php:45
+msgid "Duplicate player"
+msgstr ""
+
+#: includes/player_manager.php:48
+msgid "Export player"
+msgstr ""
+
+#: includes/player_manager.php:51
+msgid "Delete player"
+msgstr ""
+
+#: includes/player_manager.php:61
+msgid "Add New Player"
+msgstr ""
+
+#: includes/player_manager.php:65
+msgid "Import Player"
+msgstr ""
+
+#: includes/player_manager.php:87
+msgid "Player title"
+msgstr ""
+
+#: includes/player_manager.php:88
+msgid "Enter player title"
+msgstr ""
+
+#: includes/player_manager.php:92
+msgid "Select preset"
+msgstr ""
+
+#: includes/player_manager.php:174
+msgid "Add player"
+msgstr ""
+
+#: includes/playlist_manager.php:10
+msgid "Manage Playlists"
+msgstr ""
+
+#: includes/playlist_manager.php:12
+msgid ""
+"From this section you can create and edit playlists. Edit title field to "
+"change playlist name."
+msgstr ""
+
+#: includes/playlist_manager.php:48
+msgid "Duplicate playlist"
+msgstr ""
+
+#: includes/playlist_manager.php:51
+msgid "Export playlist"
+msgstr ""
+
+#: includes/playlist_manager.php:54
+msgid "Delete playlist"
+msgstr ""
+
+#: includes/playlist_manager.php:64
+msgid "Add New Playlist"
+msgstr ""
+
+#: includes/playlist_manager.php:68
+msgid "Import Playlist"
+msgstr ""
+
+#: includes/playlist_manager.php:90 includes/statistics_display.php:349
+msgid "Playlist title"
+msgstr ""
+
+#: includes/playlist_manager.php:91 includes/statistics_display.php:350
+msgid "Enter playlist title"
+msgstr ""
+
+#: includes/playlist_manager.php:102
+msgid "Add playlist"
+msgstr ""
+
+#: includes/settings.php:46
+msgid ""
+"PHP zip extension not installed or enabled! Export player and playlist "
+"feature cannot be used."
+msgstr ""
+
+#: includes/settings.php:56
+msgid "Credentials"
+msgstr ""
+
+#: includes/settings.php:62
+msgid "Youtube application ID"
+msgstr ""
+
+#: includes/settings.php:65
+#, php-format
+msgid ""
+"Required if Youtube is used. Register <a href=\"%s\" target=\"_blank\">here</"
+"a> and create new project, enable YouTube Data API, go to Credentials, "
+"create API key."
+msgstr ""
+
+#: includes/settings.php:69
+msgid "Facebook application ID"
+msgstr ""
+
+#: includes/settings.php:72
+#, php-format
+msgid ""
+"Required for Facebook social sharing. Register <a href=\"%s\" target=\"_blank"
+"\">here</a> and enter App ID."
+msgstr ""
+
+#: includes/settings.php:76
+msgid "SoundCloud API key"
+msgstr ""
+
+#: includes/settings.php:79
+#, php-format
+msgid ""
+"Required for SoundCloud music. Register <a href=\"%s\" target=\"_blank"
+"\">here</a> and enter Client ID."
+msgstr ""
+
+#: includes/settings.php:83
+msgid "Google Drive API key"
+msgstr ""
+
+#: includes/settings.php:86
+#, php-format
+msgid ""
+"Required for Google drive music. Register <a href=\"%s\" target=\"_blank"
+"\">here</a>, create new project, enable Google Drive API, create "
+"Credentials, API key, enter referrer (your domain)."
+msgstr ""
+
+#: includes/settings.php:98
+msgid "Miscellaneous"
+msgstr ""
+
+#: includes/settings.php:105
+msgid "Encrypt song url"
+msgstr ""
+
+#: includes/settings.php:107
+msgid "Hide song urls from page source with encryption."
+msgstr ""
+
+#: includes/settings.php:113
+msgid "Insert javascript into footer"
+msgstr ""
+
+#: includes/settings.php:116
+msgid ""
+"Putting the js to footer (instead of the head) can fix some javascript "
+"conflicts."
+msgstr ""
+
+#: includes/settings.php:122
+msgid "jQuery No Conflict mode"
+msgstr ""
+
+#: includes/settings.php:125
+msgid "Can fix some javascript conflicts on the page."
+msgstr ""
+
+#: includes/settings.php:131
+msgid "Override wordpress single audio"
+msgstr ""
+
+#: includes/settings.php:134
+msgid "Replace wordpress single audio with Modern audio player."
+msgstr ""
+
+#: includes/settings.php:140
+msgid "Override wordpress default audio skin"
+msgstr ""
+
+#: includes/settings.php:147
+msgid "Select skin for override wordpress audio."
+msgstr ""
+
+#: includes/settings.php:152
+msgid "Override wordpress audio playlist"
+msgstr ""
+
+#: includes/settings.php:155
+msgid "Replace wordpress audio playlist with Modern audio player."
+msgstr ""
+
+#: includes/settings.php:161
+msgid "Override wordpress default audio playlist skin"
+msgstr ""
+
+#: includes/settings.php:168
+msgid "Select skin for override wordpress audio playlist."
+msgstr ""
+
+#: includes/shortcode_manager.php:16
+msgid "Shortcode manager"
+msgstr ""
+
+#: includes/shortcode_manager.php:23
+msgid "Main Shortcodes"
+msgstr ""
+
+#: includes/shortcode_manager.php:27
+msgid ""
+"From this section you can generate shortcodes. Select player and playlist "
+"that you have already created, and copy shortcode into page or post."
+msgstr ""
+
+#: includes/shortcode_manager.php:33
+msgid "Select player"
+msgstr ""
+
+#: includes/shortcode_manager.php:44
+msgid "Select playlist"
+msgstr ""
+
+#: includes/shortcode_manager.php:47
+msgid "No playlist loaded on start"
+msgstr ""
+
+#: includes/shortcode_manager.php:56
+msgid "Select ads"
+msgstr ""
+
+#: includes/shortcode_manager.php:68
+msgid "Shortcode"
+msgstr ""
+
+#: includes/shortcode_manager.php:75
+msgid "Shortcode in PHP page:"
+msgstr ""
+
+#: includes/shortcode_manager.php:91
+msgid "Player shortcodes"
+msgstr ""
+
+#: includes/shortcode_manager.php:95
+msgid "Shortcodes for the player"
+msgstr ""
+
+#: includes/shortcode_manager.php:100 includes/shortcode_manager.php:371
+#: includes/shortcode_manager.php:627 includes/shortcode_manager.php:807
+#: includes/shortcode_manager.php:893 includes/shortcode_manager.php:1111
+msgid "Parameter"
+msgstr ""
+
+#: includes/shortcode_manager.php:101 includes/shortcode_manager.php:372
+#: includes/shortcode_manager.php:628 includes/shortcode_manager.php:808
+#: includes/shortcode_manager.php:894 includes/shortcode_manager.php:1112
+msgid "Required"
+msgstr ""
+
+#: includes/shortcode_manager.php:102 includes/shortcode_manager.php:373
+#: includes/shortcode_manager.php:629 includes/shortcode_manager.php:809
+#: includes/shortcode_manager.php:895 includes/shortcode_manager.php:1113
+msgid "Value"
+msgstr ""
+
+#: includes/shortcode_manager.php:110 includes/shortcode_manager.php:638
+#: includes/shortcode_manager.php:644 includes/shortcode_manager.php:921
+msgid "yes"
+msgstr ""
+
+#: includes/shortcode_manager.php:112
+msgid "Player skin"
+msgstr ""
+
+#: includes/shortcode_manager.php:121
+msgid "Specify dom selector (ID/Classname) which will open player on click."
+msgstr ""
+
+#: includes/shortcode_manager.php:129
+msgid ""
+"Custom element in which to place playlist items (ID or classname). By "
+"default playlist itmes are placed in hap-playlist-content element, but you "
+"can specify your own element. Use this to separate playlist from the player "
+"for example."
+msgstr ""
+
+#: includes/shortcode_manager.php:142
+msgid "Auto open popup window on page load or by clicking DOM selector."
+msgstr ""
+
+#: includes/shortcode_manager.php:150
+msgid "Volume"
+msgstr ""
+
+#: includes/shortcode_manager.php:156
+msgid "Autoplay"
+msgstr ""
+
+#: includes/shortcode_manager.php:162
+msgid "Randomize playlist"
+msgstr ""
+
+#: includes/shortcode_manager.php:168
+msgid ""
+"Loop playlist, loop current playing audio (single), or off (on playlist end "
+"no loop)"
+msgstr ""
+
+#: includes/shortcode_manager.php:174
+msgid "Use social sharing icons"
+msgstr ""
+
+#: includes/shortcode_manager.php:180
+msgid "Use button to open player in popup window."
+msgstr ""
+
+#: includes/shortcode_manager.php:186
+msgid "Use playback rate slider (speed)"
+msgstr ""
+
+#: includes/shortcode_manager.php:192
+msgid "Minimum playback rate (if playback rate slider is used)."
+msgstr ""
+
+#: includes/shortcode_manager.php:198
+msgid "Maximum playback rate (if playback rate slider is used)."
+msgstr ""
+
+#: includes/shortcode_manager.php:204
+msgid "Use A-B loop (range)"
+msgstr ""
+
+#: includes/shortcode_manager.php:222
+msgid "Player opened on start. Valid for fixed skin."
+msgstr ""
+
+#: includes/shortcode_manager.php:228
+msgid ""
+"Active song on start. Enter number, counting starts from zero (-1 = no song "
+"loaded, 0 = first song, 1 = second song etc..)"
+msgstr ""
+
+#: includes/shortcode_manager.php:234
+msgid ""
+"If true, display all playlists in page (from Playlist manager) when player "
+"runs. Useful if you want to use API method loadPlaylist (playlist-ID) on run-"
+"time. If false, display just active playlist from shortcode."
+msgstr ""
+
+#: includes/shortcode_manager.php:240
+msgid "Use playlist or just player."
+msgstr ""
+
+#: includes/shortcode_manager.php:264
+msgid "Separator between number and title in playlist"
+msgstr ""
+
+#: includes/shortcode_manager.php:270
+msgid "Separator between artist and title in playlist"
+msgstr ""
+
+#: includes/shortcode_manager.php:276
+msgid ""
+"Content to create in playlist items. Description, duration, date may be "
+"available for Podcast and Soundcloud."
+msgstr ""
+
+#: includes/shortcode_manager.php:282
+msgid ""
+"Left arrow = previous media, right arrow = next media, space = toggle "
+"playback, m = toggle mute."
+msgstr ""
+
+#: includes/shortcode_manager.php:288
+msgid "Count plays, likes, downloads. Works with single audio files."
+msgstr ""
+
+#: includes/shortcode_manager.php:301
+msgid "Use Google Analytics"
+msgstr ""
+
+#: includes/shortcode_manager.php:307
+msgid "Google Analytics tracking ID"
+msgstr ""
+
+#: includes/shortcode_manager.php:313
+msgid ""
+"Remember playback position on new page load (volume, active item, current "
+"time)."
+msgstr ""
+
+#: includes/shortcode_manager.php:319
+msgid ""
+"This will create download icons in playlist for podcast, sondcloud (if "
+"download is available), folder and google drive."
+msgstr ""
+
+#: includes/shortcode_manager.php:325
+msgid ""
+"This will create link icons in playlist for podcast, sondcloud, folder and "
+"google drive."
+msgstr ""
+
+#: includes/shortcode_manager.php:337
+msgid ""
+"Limit number of characters in playlist item description text. 0 means no "
+"limit"
+msgstr ""
+
+#: includes/shortcode_manager.php:362
+msgid "Translation"
+msgstr ""
+
+#: includes/shortcode_manager.php:383
+msgid "Search playlist songs text."
+msgstr ""
+
+#: includes/shortcode_manager.php:389 includes/translation.php:25
+#: includes/translation2.php:10
+msgid "Search nothing found message"
+msgstr ""
+
+#: includes/shortcode_manager.php:396 includes/translation.php:38
+msgid "Tooltip sort alphabetically ascending"
+msgstr ""
+
+#: includes/shortcode_manager.php:402 includes/translation.php:44
+msgid "Tooltip sort alphabetically descending"
+msgstr ""
+
+#: includes/shortcode_manager.php:409 includes/translation.php:57
+msgid "Tooltip pause song"
+msgstr ""
+
+#: includes/shortcode_manager.php:415 includes/translation.php:51
+msgid "Tooltip play song"
+msgstr ""
+
+#: includes/shortcode_manager.php:421 includes/translation.php:85
+msgid "Tooltip previous song"
+msgstr ""
+
+#: includes/shortcode_manager.php:427 includes/translation.php:64
+msgid "Tooltip next song"
+msgstr ""
+
+#: includes/shortcode_manager.php:434 includes/translation.php:91
+msgid "Tooltip volume"
+msgstr ""
+
+#: includes/shortcode_manager.php:440 includes/translation.php:97
+msgid "Tooltip shuffle off"
+msgstr ""
+
+#: includes/shortcode_manager.php:446 includes/translation.php:103
+msgid "Tooltip shuffle on"
+msgstr ""
+
+#: includes/shortcode_manager.php:452 includes/translation.php:109
+msgid "Tooltip loop playlist"
+msgstr ""
+
+#: includes/shortcode_manager.php:458 includes/translation.php:115
+msgid "Tooltip loop single"
+msgstr ""
+
+#: includes/shortcode_manager.php:464 includes/translation.php:121
+msgid "Tooltip loop off"
+msgstr ""
+
+#: includes/shortcode_manager.php:470 includes/translation.php:127
+msgid "Tooltip playback rate"
+msgstr ""
+
+#: includes/shortcode_manager.php:476 includes/translation.php:133
+msgid "Tooltip range (AB loop)"
+msgstr ""
+
+#: includes/shortcode_manager.php:482 includes/translation.php:157
+msgid "Tooltip playlist open"
+msgstr ""
+
+#: includes/shortcode_manager.php:488 includes/translation.php:163
+msgid "Tooltip playlist close"
+msgstr ""
+
+#: includes/shortcode_manager.php:494 includes/translation.php:169
+msgid "Tooltip open player in popup window"
+msgstr ""
+
+#: includes/shortcode_manager.php:501
+msgid "Tooltip close share / playback rate screen"
+msgstr ""
+
+#: includes/shortcode_manager.php:507 includes/translation.php:175
+msgid "Tooltip share"
+msgstr ""
+
+#: includes/shortcode_manager.php:513
+msgid "Tooltip share on Tumblr."
+msgstr ""
+
+#: includes/shortcode_manager.php:519 includes/translation.php:187
+msgid "Tooltip share on Twitter"
+msgstr ""
+
+#: includes/shortcode_manager.php:525 includes/translation.php:193
+msgid "Tooltip share on Facebook"
+msgstr ""
+
+#: includes/shortcode_manager.php:531
+msgid "Tooltip share on WhatsApp."
+msgstr ""
+
+#: includes/shortcode_manager.php:537 includes/shortcode_manager.php:592
+#: includes/translation.php:208
+msgid ""
+"Message which displays when user tries to share via WhatApp on desktop "
+"browser."
+msgstr ""
+
+#: includes/shortcode_manager.php:543 includes/translation.php:213
+msgid "Tooltip Share On Reddit"
+msgstr ""
+
+#: includes/shortcode_manager.php:549 includes/translation.php:219
+msgid "Tooltip Share On Digg"
+msgstr ""
+
+#: includes/shortcode_manager.php:555 includes/translation.php:225
+msgid "Tooltip Share On LinkedIn"
+msgstr ""
+
+#: includes/shortcode_manager.php:561 includes/translation.php:231
+msgid "Tooltip Share On Pinterest"
+msgstr ""
+
+#: includes/shortcode_manager.php:567 includes/translation.php:238
+msgid "Tooltip statistic plays icon"
+msgstr ""
+
+#: includes/shortcode_manager.php:573
+msgid "Tooltip statistic likes icon."
+msgstr ""
+
+#: includes/shortcode_manager.php:579 includes/translation.php:251
+msgid "Tooltip statistic downloads icon"
+msgstr ""
+
+#: includes/shortcode_manager.php:585
+msgid "Tooltip download icon."
+msgstr ""
+
+#: includes/shortcode_manager.php:598
+msgid "Load more button text."
+msgstr ""
+
+#: includes/shortcode_manager.php:605
+msgid "Message show during advertizing."
+msgstr ""
+
+#: includes/shortcode_manager.php:618
+msgid "Media shortcodes"
+msgstr ""
+
+#: includes/shortcode_manager.php:622
+msgid "Shortcodes for the media."
+msgstr ""
+
+#: includes/shortcode_manager.php:640
+msgid "Media type"
+msgstr ""
+
+#: includes/shortcode_manager.php:646 includes/shortcode_manager.php:818
+#: includes/shortcode_manager.php:824
+msgid "Audio url"
+msgstr ""
+
+#: includes/shortcode_manager.php:650 includes/shortcode_manager.php:656
+msgid "for shoutcast"
+msgstr ""
+
+#: includes/shortcode_manager.php:652
+msgid "Shoutcast radio version (1 or 2)"
+msgstr ""
+
+#: includes/shortcode_manager.php:662
+msgid "for icecast / radiojar"
+msgstr ""
+
+#: includes/shortcode_manager.php:664
+msgid "Mountpoint for icecast / radiojar"
+msgstr ""
+
+#: includes/shortcode_manager.php:688
+msgid "Thumb image"
+msgstr ""
+
+#: includes/shortcode_manager.php:694
+msgid "Add video to syncronize video with playing audio."
+msgstr ""
+
+#: includes/shortcode_manager.php:700
+msgid "Url to lyrics file (srt, vtt, lrc, txt)."
+msgstr ""
+
+#: includes/shortcode_manager.php:706
+msgid "Backup thumb image for items that do not have thumb set with api."
+msgstr ""
+
+#: includes/shortcode_manager.php:712
+msgid "Playlist download url"
+msgstr ""
+
+#: includes/shortcode_manager.php:718
+msgid "Url to lyrics file lrc, srt, vtt (same domain restriction)"
+msgstr ""
+
+#: includes/shortcode_manager.php:724
+msgid "Playlist url link"
+msgstr ""
+
+#: includes/shortcode_manager.php:730
+msgid "Playlist url target"
+msgstr ""
+
+#: includes/shortcode_manager.php:736
+msgid "Number of results to retrieve (default all)."
+msgstr ""
+
+#: includes/shortcode_manager.php:742
+msgid ""
+"Load more on total scroll in playlist (when scroll reaches end of playlist). "
+"Works in conjuntion with limit option (for example, set limit=\"10\" which "
+"will show 10 items in playlist on start, then on load more, it will load "
+"another 10, and so on. Works for Soundcloud, Youtube, Folder playlist, "
+"Podcast"
+msgstr ""
+
+#: includes/shortcode_manager.php:746 includes/shortcode_manager.php:752
+msgid "Optional for folder"
+msgstr ""
+
+#: includes/shortcode_manager.php:748
+msgid "get id3 tags from files when reading folder"
+msgstr ""
+
+#: includes/shortcode_manager.php:754
+msgid "sort option to apply when reading folder"
+msgstr ""
+
+#: includes/shortcode_manager.php:758
+msgid "Optional for accordion"
+msgstr ""
+
+#: includes/shortcode_manager.php:765 includes/shortcode_manager.php:771
+msgid "Optional for google drive"
+msgstr ""
+
+#: includes/shortcode_manager.php:767
+msgid "sort option to apply when reading google drive"
+msgstr ""
+
+#: includes/shortcode_manager.php:773
+msgid ""
+"Google drive has some limitation in file size which can be played because it "
+"generates expiring links on large files. If your files on Google drive are "
+"larger in size (~ several 100 mbs or larger) use this option."
+msgstr ""
+
+#: includes/shortcode_manager.php:779
+msgid "Media start time in seconds"
+msgstr ""
+
+#: includes/shortcode_manager.php:785
+msgid "Media end time in seconds"
+msgstr ""
+
+#: includes/shortcode_manager.php:798
+msgid "Ad shortcodes"
+msgstr ""
+
+#: includes/shortcode_manager.php:825
+msgid "Add audio ad that plays in specified interval while main song plays"
+msgstr ""
+
+#: includes/shortcode_manager.php:830
+msgid "miliseconds"
+msgstr ""
+
+#: includes/shortcode_manager.php:842
+msgid "Audio url."
+msgstr ""
+
+#: includes/shortcode_manager.php:857 includes/shortcode_manager.php:937
+#: includes/shortcode_manager.php:1166
+msgid "Shortcode examples:"
+msgstr ""
+
+#: includes/shortcode_manager.php:859
+msgid ""
+"Take ads from Ad section, these ads will be used for all songs in the player:"
+msgstr ""
+
+#: includes/shortcode_manager.php:864
+msgid "Single audio with manually defined ads:"
+msgstr ""
+
+#: includes/shortcode_manager.php:868
+msgid "Podcast with manually defined ads:"
+msgstr ""
+
+#: includes/shortcode_manager.php:873
+msgid "Podcast with ads from Ad section:"
+msgstr ""
+
+#: includes/shortcode_manager.php:884
+msgid "Radio shortcodes"
+msgstr ""
+
+#: includes/shortcode_manager.php:905
+msgid "Default song artist text when current playing song in not available."
+msgstr ""
+
+#: includes/shortcode_manager.php:911
+msgid "Default song title text when current playing song in not available."
+msgstr ""
+
+#: includes/shortcode_manager.php:917
+msgid ""
+"Last played interval at which current playing song and song history is "
+"retrieved (miliseconds). It is advised not to set this below 10000 "
+"miliseconds!"
+msgstr ""
+
+#: includes/shortcode_manager.php:923
+msgid ""
+"Proxy url for getting radio data. How to install your own CORS PROXY with "
+"this Video Tutorial:"
+msgstr ""
+
+#: includes/shortcode_manager.php:929
+msgid ""
+"This will prefix cors infront radio url. You can use this option for example "
+"if you have SSL website with HTTPS cors."
+msgstr ""
+
+#: includes/shortcode_manager.php:939
+msgid "Shoutcast version 1:"
+msgstr ""
+
+#: includes/shortcode_manager.php:943
+msgid "Shoutcast version 2:"
+msgstr ""
+
+#: includes/shortcode_manager.php:947
+msgid "Icecast:"
+msgstr ""
+
+#: includes/shortcode_manager.php:951
+msgid "Radiojar:"
+msgstr ""
+
+#: includes/shortcode_manager.php:962
+msgid "Shortcode examples"
+msgstr ""
+
+#: includes/shortcode_manager.php:966
+msgid "If you use Soundcloud, Youtube or Google Drive, set API keys in"
+msgstr ""
+
+#: includes/shortcode_manager.php:968
+msgid "Podcast:"
+msgstr ""
+
+#: includes/shortcode_manager.php:972
+msgid "Multiple podcast:"
+msgstr ""
+
+#: includes/shortcode_manager.php:982
+msgid "Soundcloud:"
+msgstr ""
+
+#: includes/shortcode_manager.php:986
+msgid "Folder of mp3 files:"
+msgstr ""
+
+#: includes/shortcode_manager.php:992
+msgid "Multiple folder of mp3 files:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1002
+msgid "Folder ACCORDION mode of mp3 files:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1008
+msgid "Google Drive folder:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1014
+msgid "HLS m3u8 live streaming:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1018
+msgid "Multiple m3u8 live streaming:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1028
+msgid "Youtube single videos:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1032
+msgid "Youtube playlist:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1036
+msgid ""
+"Youtube single video without api (This will not retrieve title from Youtube, "
+"only play video):"
+msgstr ""
+
+#: includes/shortcode_manager.php:1041
+msgid "XML:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1047
+msgid "JSON:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1054
+msgid "Single audio:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1058
+msgid "Multiple audio:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1065
+msgid ""
+"Combine player_id with multiple audio: (so your player settings come from "
+"player_id in admin and your audio from shortcode attributes)."
+msgstr ""
+
+#: includes/shortcode_manager.php:1102
+msgid "Display statistics table in frontend"
+msgstr ""
+
+#: includes/shortcode_manager.php:1123
+msgid ""
+"Playlist ID for which to return statistics. This is optional, if no "
+"playlist_id is specified, statistics will be returned for all playlists."
+msgstr ""
+
+#: includes/shortcode_manager.php:1129
+msgid "Title above statistics table."
+msgstr ""
+
+#: includes/shortcode_manager.php:1135
+msgid "Number of results from statistics to return."
+msgstr ""
+
+#: includes/shortcode_manager.php:1141
+msgid "Direction in which statistics is returned (ascending / descending)."
+msgstr ""
+
+#: includes/shortcode_manager.php:1147
+msgid "Number of days to return from statistics (for TOP PLAYS LAST X DAYS)"
+msgstr ""
+
+#: includes/shortcode_manager.php:1153
+msgid ""
+"Link songs in statistics table to the player (when song is clicked in "
+"statistics it will play in player)."
+msgstr ""
+
+#: includes/shortcode_manager.php:1159
+msgid "Player ID for which to link statistics."
+msgstr ""
+
+#: includes/shortcode_manager.php:1168 includes/shortcode_manager.php:1209
+msgid "TOP PLAYS TODAY:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1172
+msgid "TOP PLAYS LAST 7 DAYS:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1176
+msgid "TOP PLAYS LAST 30 DAYS:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1180
+msgid "TOP PLAYS THIS WEEK:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1184
+msgid "TOP PLAYS THIS MONTH:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1188
+msgid "TOP PLAYS ALL TIME:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1192
+msgid "TOP FINISH ALL TIME:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1196
+msgid "TOP DOWNLOAD ALL TIME:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1200
+msgid "TOP LIKE ALL TIME:"
+msgstr ""
+
+#: includes/shortcode_manager.php:1207
+msgid ""
+"Link statistics table with player (when song is clicked it will play in the "
+"player). Provide 2 shortcodes, one is statistics table, other is for player. "
+"player_id nad playlist_id has to be the same in both shortcodes!"
+msgstr ""
+
+#: includes/statistics_display.php:16
+msgid "Audio statistics"
+msgstr ""
+
+#: includes/statistics_display.php:18
+msgid ""
+"Statistics can be shown for all playlists, specific playlist or songs "
+"without a playlist ( song from direct shortocode [apmap type=\"audio\" title="
+"\"song-title\" artist=\"song-artist\" mp3=\"song-url\"] ), or from a player."
+msgstr ""
+
+#: includes/statistics_display.php:26
+msgid "Choose from which source to display statistics:"
+msgstr ""
+
+#: includes/statistics_display.php:38
+msgid "Choose playlist to show statistics data:"
+msgstr ""
+
+#: includes/statistics_display.php:41
+msgid "All playlists"
+msgstr ""
+
+#: includes/statistics_display.php:42
+msgid "Songs without playlist (songs from direct shortcode)"
+msgstr ""
+
+#: includes/statistics_display.php:50
+msgid "Choose player to show statistics data:"
+msgstr ""
+
+#: includes/statistics_display.php:63
+msgid "Clear Statistics"
+msgstr ""
+
+#: includes/statistics_display.php:63
+msgid "Are you sure to clear statistics for this segment?"
+msgstr ""
+
+#: includes/statistics_display.php:72
+msgid "Total time played"
+msgstr ""
+
+#: includes/statistics_display.php:76
+msgid "Total plays"
+msgstr ""
+
+#: includes/statistics_display.php:80
+msgid "Total downloads"
+msgstr ""
+
+#: includes/statistics_display.php:84
+msgid "Total likes"
+msgstr ""
+
+#: includes/statistics_display.php:88
+msgid "Total finished"
+msgstr ""
+
+#: includes/statistics_display.php:100
+msgid "TOP PLAYS OF THE DAY"
+msgstr ""
+
+#: includes/statistics_display.php:102 includes/statistics_display.php:119
+#: includes/statistics_display.php:136 includes/statistics_display.php:157
+#: includes/statistics_display.php:174 includes/statistics_display.php:191
+#: includes/statistics_display.php:208
+msgid "Create playlist from these songs"
+msgstr ""
+
+#: includes/statistics_display.php:107 includes/statistics_display.php:124
+#: includes/statistics_display.php:141 includes/statistics_display.php:162
+#: includes/statistics_display.php:179 includes/statistics_display.php:196
+#: includes/statistics_display.php:213
+msgid "Data Not Available"
+msgstr ""
+
+#: includes/statistics_display.php:117
+msgid "TOP PLAYS THIS WEEK"
+msgstr ""
+
+#: includes/statistics_display.php:134
+msgid "TOP PLAYS THIS MONTH"
+msgstr ""
+
+#: includes/statistics_display.php:155
+msgid "TOP PLAYS ALL TIME"
+msgstr ""
+
+#: includes/statistics_display.php:172
+msgid "TOP DOWNLOADS ALL TIME"
+msgstr ""
+
+#: includes/statistics_display.php:189
+msgid "TOP LIKES ALL TIME"
+msgstr ""
+
+#: includes/statistics_display.php:206
+msgid "TOP FINISHED ALL TIME"
+msgstr ""
+
+#: includes/statistics_display.php:226
+msgid "Graph options"
+msgstr ""
+
+#: includes/statistics_display.php:231
+msgid "Graph type"
+msgstr ""
+
+#: includes/statistics_display.php:241
+msgid "Data to display"
+msgstr ""
+
+#: includes/statistics_display.php:257
+msgid "Number of days to display"
+msgstr ""
+
+#: includes/statistics_display.php:299
+msgid "Time played"
+msgstr ""
+
+#: includes/statistics_display.php:301
+msgid "Plays"
+msgstr ""
+
+#: includes/statistics_display.php:303
+msgid "Downloads"
+msgstr ""
+
+#: includes/statistics_display.php:305
+msgid "Likes"
+msgstr ""
+
+#: includes/statistics_display.php:307
+msgid "Finishes"
+msgstr ""
+
+#: includes/statistics_display.php:326
+msgid "Create graph"
+msgstr ""
+
+#: includes/statistics_display.php:326
+msgid "Remove graph"
+msgstr ""
+
+#: includes/statistics_display.php:344
+msgid "Create playlist from these songs."
+msgstr ""
+
+#: includes/statistics_display.php:361
+msgid "Create playlist"
+msgstr ""
+
+#: includes/translation.php:4
+msgid "Read more text to show all description in playlist items"
+msgstr ""
+
+#: includes/translation.php:11
+msgid "Read more text to hide all description in playlist items"
+msgstr ""
+
+#: includes/translation.php:18 includes/translation2.php:4
+msgid "Search playlist songs text"
+msgstr ""
+
+#: includes/translation.php:32 includes/translation2.php:16
+msgid "Load more button text"
+msgstr ""
+
+#: includes/translation.php:71
+msgid "Tooltip skip backward"
+msgstr ""
+
+#: includes/translation.php:78
+msgid "Tooltip skip forward"
+msgstr ""
+
+#: includes/translation.php:139
+msgid "Tooltip video"
+msgstr ""
+
+#: includes/translation.php:145
+msgid "Tooltip lyrics"
+msgstr ""
+
+#: includes/translation.php:151
+msgid "Lyrics auto scroll"
+msgstr ""
+
+#: includes/translation.php:181
+msgid "Tooltip share on Tumblr"
+msgstr ""
+
+#: includes/translation.php:199
+msgid "Tooltip share on WhatsApp"
+msgstr ""
+
+#: includes/translation.php:205
+msgid "WhatsApp warning"
+msgstr ""
+
+#: includes/translation.php:244
+msgid "Tooltip statistic likes icon"
+msgstr ""
+
+#: includes/translation.php:257
+msgid "Tooltip download icon"
+msgstr ""
+
+#: includes/translation.php:263
+msgid "Tooltip link icon"
+msgstr ""
+
+#: includes/translation.php:269
+msgid "Tooltip close screen (share, playback rate, speed...)"
+msgstr ""
+
+#: includes/translation.php:275
+msgid "Dialog drag corner and resize title"
+msgstr ""
+
+#: includes/translation.php:282
+msgid "Advertising message"
+msgstr ""
+
+#: includes/translation2.php:23
+msgid "Pagination previous button title"
+msgstr ""
+
+#: includes/translation2.php:30
+msgid "Pagination previous button text"
+msgstr ""
+
+#: includes/translation2.php:37
+msgid "Pagination next button title"
+msgstr ""
+
+#: includes/translation2.php:44
+msgid "Pagination next button text"
+msgstr ""
+
+#: includes/widgets.php:13
+msgid "Add player with playlist in your website."
+msgstr ""
+
+#: includes/widgets.php:46
+msgid "Select player:"
+msgstr ""
+
+#: includes/widgets.php:58
+msgid "Please create a player."
+msgstr ""
+
+#: includes/widgets.php:59
+msgid "Create a player."
+msgstr ""
+
+#: includes/widgets.php:69
+msgid "Select playlist:"
+msgstr ""
+
+#: includes/widgets.php:81
+msgid "Please create a playlist."
+msgstr ""
+
+#: includes/widgets.php:82
+msgid "Create a playlist."
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:4
+#: includes/preset_config/art_wide.php:4 includes/preset_config/brona.php:4
+#: includes/preset_config/compact.php:4 includes/preset_config/fixed.php:4
+#: includes/preset_config/metalic.php:4 includes/preset_config/modern.php:4
+#: includes/preset_config/wall.php:4
+msgid "Player background color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:10
+#: includes/preset_config/art_wide.php:10 includes/preset_config/brona.php:10
+#: includes/preset_config/compact.php:10 includes/preset_config/fixed.php:10
+#: includes/preset_config/metalic.php:10 includes/preset_config/modern.php:10
+#: includes/preset_config/poster.php:3 includes/preset_config/tiny.php:4
+#: includes/preset_config/wall.php:10 includes/preset_config/widget.php:4
+msgid "Icon color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:16
+#: includes/preset_config/art_wide.php:16 includes/preset_config/brona.php:16
+#: includes/preset_config/compact.php:16 includes/preset_config/fixed.php:16
+#: includes/preset_config/metalic.php:16 includes/preset_config/modern.php:16
+#: includes/preset_config/poster.php:9 includes/preset_config/tiny.php:10
+#: includes/preset_config/wall.php:16 includes/preset_config/widget.php:10
+msgid "Icon hover color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:22
+#: includes/preset_config/art_wide.php:22 includes/preset_config/brona.php:22
+#: includes/preset_config/fixed.php:22 includes/preset_config/poster.php:15
+#: includes/preset_config/wall.php:61 includes/preset_config/widget.php:16
+msgid "Player title text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:28
+#: includes/preset_config/art_wide.php:28 includes/preset_config/brona.php:28
+#: includes/preset_config/fixed.php:28 includes/preset_config/poster.php:21
+#: includes/preset_config/widget.php:22
+msgid "Player artist text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:35
+msgid "Volume background color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:41
+msgid "Volume icon color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:48
+#: includes/preset_config/art_wide.php:35 includes/preset_config/brona.php:35
+#: includes/preset_config/compact.php:23 includes/preset_config/fixed.php:35
+#: includes/preset_config/metalic.php:23 includes/preset_config/modern.php:23
+#: includes/preset_config/poster.php:28 includes/preset_config/tiny.php:17
+#: includes/preset_config/wall.php:23 includes/preset_config/widget.php:29
+msgid "Volume seekbar background color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:54
+#: includes/preset_config/art_wide.php:41 includes/preset_config/brona.php:41
+#: includes/preset_config/compact.php:29 includes/preset_config/fixed.php:41
+#: includes/preset_config/metalic.php:29 includes/preset_config/modern.php:29
+#: includes/preset_config/poster.php:34 includes/preset_config/tiny.php:23
+#: includes/preset_config/wall.php:29 includes/preset_config/widget.php:35
+msgid "Volume seekbar level color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:60
+#: includes/preset_config/art_wide.php:47 includes/preset_config/brona.php:47
+#: includes/preset_config/fixed.php:47 includes/preset_config/metalic.php:35
+#: includes/preset_config/modern.php:35 includes/preset_config/poster.php:40
+#: includes/preset_config/wall.php:35 includes/preset_config/widget.php:41
+msgid "Progress seekbar background color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:66
+#: includes/preset_config/art_wide.php:53 includes/preset_config/brona.php:53
+#: includes/preset_config/fixed.php:53 includes/preset_config/metalic.php:41
+#: includes/preset_config/poster.php:46 includes/preset_config/tiny.php:29
+#: includes/preset_config/wall.php:41 includes/preset_config/widget.php:47
+msgid "Progress seekbar buffered color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:72
+#: includes/preset_config/art_wide.php:59 includes/preset_config/brona.php:59
+#: includes/preset_config/fixed.php:59 includes/preset_config/metalic.php:47
+#: includes/preset_config/modern.php:41 includes/preset_config/poster.php:52
+#: includes/preset_config/tiny.php:35 includes/preset_config/wall.php:47
+#: includes/preset_config/widget.php:53
+msgid "Progress seekbar level color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:78
+#: includes/preset_config/art_wide.php:65 includes/preset_config/brona.php:65
+#: includes/preset_config/fixed.php:65
+msgid "Ad seekbar level color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:84
+#: includes/preset_config/art_wide.php:71 includes/preset_config/brona.php:71
+#: includes/preset_config/wall.php:54
+msgid "Player time text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:90
+#: includes/preset_config/art_wide.php:77
+msgid "AB loop handle background color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:96
+#: includes/preset_config/art_wide.php:83
+msgid "AB loop handle background hover color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:103
+#: includes/preset_config/art_wide.php:90 includes/preset_config/brona.php:78
+#: includes/preset_config/fixed.php:72 includes/preset_config/metalic.php:54
+#: includes/preset_config/modern.php:48
+msgid "Playlist item text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:109
+#: includes/preset_config/art_wide.php:96 includes/preset_config/brona.php:84
+#: includes/preset_config/fixed.php:78 includes/preset_config/metalic.php:60
+#: includes/preset_config/modern.php:54
+msgid "Playlist item selected text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:115
+#: includes/preset_config/fixed.php:84 includes/preset_config/modern.php:60
+msgid "Playlist item selected background color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:121
+#: includes/preset_config/art_wide.php:102 includes/preset_config/brona.php:90
+#: includes/preset_config/fixed.php:90
+msgid "Playlist item description text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:127
+#: includes/preset_config/art_wide.php:108 includes/preset_config/brona.php:96
+#: includes/preset_config/fixed.php:96
+msgid "Playlist item duration text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:133
+#: includes/preset_config/art_wide.php:114
+#: includes/preset_config/brona.php:102 includes/preset_config/fixed.php:102
+msgid "Playlist item date text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:139
+#: includes/preset_config/art_wide.php:120
+#: includes/preset_config/brona.php:108 includes/preset_config/fixed.php:108
+#: includes/preset_config/metalic.php:66 includes/preset_config/modern.php:67
+#: includes/preset_config/wall.php:87
+msgid "Playlist link and download icon color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:145
+#: includes/preset_config/art_wide.php:126
+#: includes/preset_config/brona.php:114 includes/preset_config/fixed.php:114
+#: includes/preset_config/metalic.php:72 includes/preset_config/modern.php:73
+#: includes/preset_config/wall.php:93
+msgid "Playlist link and download icon hover color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:151
+#: includes/preset_config/art_wide.php:132
+#: includes/preset_config/brona.php:120 includes/preset_config/fixed.php:120
+#: includes/preset_config/metalic.php:79 includes/preset_config/modern.php:80
+#: includes/preset_config/wall.php:106
+msgid "Statistics icon color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:157
+#: includes/preset_config/art_wide.php:138
+#: includes/preset_config/brona.php:126 includes/preset_config/fixed.php:126
+#: includes/preset_config/metalic.php:85 includes/preset_config/modern.php:86
+#: includes/preset_config/wall.php:112
+msgid "Statistics icon hover color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:163
+#: includes/preset_config/art_wide.php:144
+#: includes/preset_config/brona.php:133 includes/preset_config/fixed.php:133
+#: includes/preset_config/modern.php:93
+msgid "Search filter background color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:169
+#: includes/preset_config/art_wide.php:150
+#: includes/preset_config/brona.php:139 includes/preset_config/fixed.php:139
+#: includes/preset_config/modern.php:99
+msgid "Search filter text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:175
+#: includes/preset_config/art_wide.php:156
+#: includes/preset_config/brona.php:145 includes/preset_config/fixed.php:145
+#: includes/preset_config/modern.php:105
+msgid "Nothing found text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:181
+#: includes/preset_config/art_wide.php:162
+#: includes/preset_config/brona.php:151 includes/preset_config/fixed.php:151
+#: includes/preset_config/metalic.php:93 includes/preset_config/modern.php:112
+#: includes/preset_config/poster.php:68 includes/preset_config/tiny.php:49
+#: includes/preset_config/wall.php:119 includes/preset_config/widget.php:59
+msgid "Tooltip background color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:187
+#: includes/preset_config/art_wide.php:168
+#: includes/preset_config/brona.php:157 includes/preset_config/fixed.php:157
+#: includes/preset_config/metalic.php:99 includes/preset_config/modern.php:118
+#: includes/preset_config/poster.php:74 includes/preset_config/tiny.php:42
+#: includes/preset_config/wall.php:125 includes/preset_config/widget.php:65
+msgid "Tooltip text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:193
+#: includes/preset_config/art_wide.php:180
+#: includes/preset_config/brona.php:163 includes/preset_config/fixed.php:163
+#: includes/preset_config/metalic.php:106
+#: includes/preset_config/modern.php:125 includes/preset_config/poster.php:81
+#: includes/preset_config/wall.php:132 includes/preset_config/widget.php:71
+msgid "Preloader color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:200
+#: includes/preset_config/art_wide.php:187
+#: includes/preset_config/brona.php:170
+msgid "Load more button text color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:206
+#: includes/preset_config/art_wide.php:193
+#: includes/preset_config/brona.php:176
+msgid "Load more button background color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:212
+#: includes/preset_config/art_wide.php:199
+#: includes/preset_config/brona.php:182
+msgid "Load more button text hover color"
+msgstr ""
+
+#: includes/preset_config/art_narrow.php:218
+#: includes/preset_config/art_wide.php:205
+#: includes/preset_config/brona.php:188
+msgid "Load more button background hover color"
+msgstr ""
+
+#: includes/preset_config/art_wide.php:174
+msgid "Tooltip border color"
+msgstr ""
+
+#: includes/preset_config/poster.php:59
+msgid "Share holder background color"
+msgstr ""
+
+#: includes/preset_config/wall.php:67
+msgid "Player description text color"
+msgstr ""
+
+#: includes/preset_config/wall.php:74
+msgid "Playlist background color"
+msgstr ""
+
+#: includes/preset_config/wall.php:80
+msgid "Playlist item overlay background color"
+msgstr ""
+
+#: includes/preset_config/wall.php:100
+msgid "Playlist title text color"
+msgstr ""
+
+#: includes/preset_config/_general.php:4
+msgid "Dialog header background color"
+msgstr ""
+
+#: includes/preset_config/_general.php:11
+msgid "Dialog content background color"
+msgstr ""
+
+#: includes/preset_config/_general.php:18
+msgid "Lyrics text color"
+msgstr ""
+
+#: includes/preset_config/_general.php:25
+msgid "Lyrics text active background color"
+msgstr ""
