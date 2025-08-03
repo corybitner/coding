@@ -588,6 +588,8 @@
 .sap-playlist-item.playing .sap-item-number::before {
     content: "♪";
     color: #5382F6;
+    font-size: 14px;
+    margin-right: 4px;
     animation: pulse 1.5s infinite;
 }
 
