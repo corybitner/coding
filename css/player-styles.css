@@ -1,6 +1,6 @@
-/* Simple Audio Player - Art Wide Theme - Custom */
+/* Simple Audio Player - Modern Theme */
 
-/* Modern Icons (using better Unicode characters) */
+/* Modern Icons */
 .sap-icon {
     font-style: normal;
     display: inline-block;
@@ -12,9 +12,8 @@
 .sap-icon-pause::before { content: "⏸"; }
 .sap-icon-prev::before { content: "⏮"; }
 .sap-icon-next::before { content: "⏭"; }
-.sap-icon-volume::before { content: "♪"; }
+.sap-icon-volume::before { content: "🔊"; }
 .sap-icon-volume-mute::before { content: "🔇"; }
-.sap-icon-loop::before { content: "🔄"; }
 
 /* Main Player Wrapper */
 .sap-player-wrapper {

@@ -27,8 +27,7 @@ class SimpleAudioPlayer {
         this.isDragging = false;
         this.volume = this.options.volume;
         this.isMuted = false;
-        this.currentPlaybackRate = 1;
-        this.loop = false;
+                       this.currentPlaybackRate = 1;
         
         this.init();
     }
@@ -71,8 +70,7 @@ class SimpleAudioPlayer {
         // Speed button
         this.container.querySelector('.sap-speed-btn')?.addEventListener('click', () => this.togglePlaybackRate());
         
-        // Loop button
-        this.container.querySelector('.sap-loop-btn')?.addEventListener('click', () => this.toggleLoop());
+        
         
         // Volume button
         this.container.querySelector('.sap-volume-btn')?.addEventListener('click', () => this.toggleMute());
@@ -136,10 +134,7 @@ class SimpleAudioPlayer {
                     e.preventDefault();
                     this.toggleMute();
                     break;
-                case 'KeyL':
-                    e.preventDefault();
-                    this.toggleLoop();
-                    break;
+                
                 case 'KeyS':
                     e.preventDefault();
                     this.togglePlaybackRate();
@@ -347,13 +342,7 @@ class SimpleAudioPlayer {
         }
     }
     
-    toggleLoop() {
-        this.loop = !this.loop;
-        const loopBtn = this.container.querySelector('.sap-loop-btn');
-        if (loopBtn) {
-            loopBtn.classList.toggle('active', this.loop);
-        }
-    }
+    
     
     onMouseMove(event) {
         if (this.isDragging) {
@@ -381,14 +370,9 @@ class SimpleAudioPlayer {
         this.updateTimeDisplay();
     }
     
-    onTrackEnded() {
-        if (this.loop) {
-            this.audio.currentTime = 0;
-            this.play();
-        } else {
-            this.nextTrack();
-        }
-    }
+               onTrackEnded() {
+               this.nextTrack();
+           }
     
     onCanPlay() {
         this.container.classList.remove('sap-loading');

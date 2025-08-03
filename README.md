@@ -1,14 +1,14 @@
 # Simple Audio Player
 
-A lightweight WordPress audio player plugin with M3U playlist support, keyboard controls, and beautiful Art Wide design. This is a slimmed-down version of the Modern Audio Player, removing bloat while keeping the core functionality you love.
+A lightweight WordPress audio player plugin with M3U playlist support, keyboard controls, and beautiful modern design. This is a slimmed-down version of the Modern Audio Player, removing bloat while keeping the core functionality you love.
 
 ## ✨ Features
 
 - **🎵 M3U Playlist Support** - Upload and parse M3U/M3U8 files
 - **⌨️ Keyboard Controls** - Full keyboard navigation
-- **🎨 Art Wide Theme** - Beautiful album art-focused design  
+- **🎨 Modern Theme** - Beautiful album art-focused design  
 - **📱 Responsive Design** - Works on desktop, tablet, and mobile
-- **🔄 Playback Controls** - Play, pause, next, previous, loop, speed control
+- **🔄 Playback Controls** - Play, pause, next, previous, speed control
 - **🔊 Volume Control** - Click or drag volume slider
 - **📖 Simple Usage** - Just use a shortcode
 - **🚀 Lightweight** - Only ~1000 lines vs 5,680+ in original
@@ -71,7 +71,7 @@ https://example.com/song2.mp3
 | **P** | Previous track |
 | **N** | Next track |
 | **M** | Mute/Unmute |
-| **L** | Toggle loop |
+
 | **S** | Cycle playback speed |
 | **←** | Seek backward 10s |
 | **→** | Seek forward 10s |
@@ -96,7 +96,7 @@ Elegant dark design for dark websites or user preference.
 simple-audio-player/
 ├── simple-audio-player.php    # Main plugin file
 ├── css/
-│   └── art-wide.css           # Art Wide theme styles
+│   └── player-styles.css      # Modern theme styles
 ├── js/
 │   └── simple-player.js       # Core player functionality
 └── README.md                  # This file
@@ -138,7 +138,7 @@ add_filter('upload_mimes', function($mimes) {
 | **Admin Interface** | ✅ Complex | ❌ None needed |
 | **Statistics** | ✅ Full analytics | ❌ Removed |
 | **Advertisements** | ✅ Ad management | ❌ Removed |
-| **Multiple Skins** | ✅ 15+ themes | ✅ 1 (Art Wide) |
+| **Multiple Skins** | ✅ 15+ themes | ✅ 1 (Modern) |
 | **M3U Support** | ❌ Limited | ✅ Full support |
 | **Keyboard Controls** | ✅ Yes | ✅ Yes |
 | **Performance** | ⚠️ Heavy | ✅ Lightweight |
@@ -197,4 +197,4 @@ Feel free to submit issues and pull requests on GitHub.
 
 ## ✨ Credits
 
-Based on the Modern Audio Player by Tean, slimmed down to focus on core functionality with M3U playlist support.
+Based on the Modern Audio Player by Tean, slimmed down to focus on core functionality with M3U playlist support and modern design.

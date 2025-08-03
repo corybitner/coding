@@ -2,7 +2,7 @@
 /*
 Plugin Name: Simple Audio Player
 Plugin URI: https://github.com/corybitner/simple-audio-player
-Description: A lightweight audio player with M3U playlist support, keyboard controls, and Art Wide skin
+Description: A lightweight audio player with M3U playlist support, keyboard controls, and modern design
 Version: 1.0.0
 Author: Cory Bitner
 */
@@ -37,7 +37,7 @@ class SimpleAudioPlayer {
     
     public function enqueue_scripts() {
         wp_enqueue_script('sap-player', SAP_PLUGIN_URL . 'js/simple-player.js', array('jquery'), '1.0.0', true);
-        wp_enqueue_style('sap-art-wide', SAP_PLUGIN_URL . 'css/art-wide.css', array(), '1.0.0');
+                   wp_enqueue_style('sap-player-styles', SAP_PLUGIN_URL . 'css/player-styles.css', array(), '1.0.0');
         
         wp_localize_script('sap-player', 'sap_ajax', array(
             'ajax_url' => admin_url('admin-ajax.php'),
@@ -121,10 +121,7 @@ class SimpleAudioPlayer {
                             </div>
                         </div>
                         
-                        <button class="sap-btn sap-speed-btn" title="Playback Speed (S)">1x</button>
-                        <button class="sap-btn sap-loop-btn" title="Loop (L)">
-                            <i class="sap-icon sap-icon-loop"></i>
-                        </button>
+                                                       <button class="sap-btn sap-speed-btn" title="Playback Speed (S)">1x</button>
                     </div>
                 </div>
             </div>
