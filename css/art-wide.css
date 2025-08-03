@@ -1,0 +1,564 @@
+/* Simple Audio Player - Art Wide Theme */
+
+/* Icons (using simple Unicode characters for compatibility) */
+.sap-icon {
+    font-style: normal;
+    display: inline-block;
+    width: 1em;
+    text-align: center;
+}
+
+.sap-icon-play::before { content: "▶"; }
+.sap-icon-pause::before { content: "⏸"; }
+.sap-icon-prev::before { content: "⏮"; }
+.sap-icon-next::before { content: "⏭"; }
+.sap-icon-volume::before { content: "🔊"; }
+.sap-icon-volume-mute::before { content: "🔇"; }
+.sap-icon-loop::before { content: "🔄"; }
+
+/* Main Player Wrapper */
+.sap-player-wrapper {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sap-player-wrapper.sap-dark {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+/* Main Player Section */
+.sap-player-main {
+    display: flex;
+    padding: 24px;
+    gap: 24px;
+    align-items: center;
+}
+
+/* Artwork Section */
+.sap-artwork {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    flex-shrink: 0;
+}
+
+.sap-album-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sap-artwork-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sap-artwork:hover .sap-artwork-overlay {
+    opacity: 1;
+}
+
+.sap-play-pause-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    color: #333;
+}
+
+.sap-play-pause-btn:hover {
+    background: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Player Controls */
+.sap-player-controls {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sap-track-info {
+    margin-bottom: 8px;
+}
+
+.sap-track-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.sap-track-artist {
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+}
+
+.sap-dark .sap-track-title {
+    color: #ffffff;
+}
+
+.sap-dark .sap-track-artist {
+    color: #cccccc;
+}
+
+/* Controls Bar */
+.sap-controls-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.sap-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+}
+
+.sap-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: #333;
+}
+
+.sap-dark .sap-btn {
+    color: #cccccc;
+}
+
+.sap-dark .sap-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.sap-play-pause-main {
+    background: #4f46e5;
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+.sap-play-pause-main:hover {
+    background: #4338ca;
+    transform: scale(1.05);
+}
+
+.sap-speed-btn {
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 32px;
+}
+
+/* Progress Container */
+.sap-progress-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.sap-time-current,
+.sap-time-total {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+    min-width: 35px;
+}
+
+.sap-dark .sap-time-current,
+.sap-dark .sap-time-total {
+    color: #cccccc;
+}
+
+/* Seekbar */
+.sap-seekbar {
+    position: relative;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    flex: 1;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.sap-dark .sap-seekbar {
+    background: #374151;
+}
+
+.sap-seekbar-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #e5e7eb;
+}
+
+.sap-dark .sap-seekbar-bg {
+    background: #374151;
+}
+
+.sap-seekbar-buffer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #d1d5db;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.sap-dark .sap-seekbar-buffer {
+    background: #4b5563;
+}
+
+.sap-seekbar-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #4f46e5;
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+.sap-seekbar-handle {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 16px;
+    height: 16px;
+    background: #4f46e5;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.sap-seekbar:hover .sap-seekbar-handle {
+    opacity: 1;
+}
+
+/* Volume Container */
+.sap-volume-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sap-volume-slider {
+    position: relative;
+    width: 80px;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.sap-dark .sap-volume-slider {
+    background: #374151;
+}
+
+.sap-volume-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #e5e7eb;
+    border-radius: 3px;
+}
+
+.sap-dark .sap-volume-bg {
+    background: #374151;
+}
+
+.sap-volume-level {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #4f46e5;
+    width: 80%;
+    border-radius: 3px;
+    transition: width 0.1s ease;
+}
+
+.sap-volume-handle {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    width: 12px;
+    height: 12px;
+    background: #4f46e5;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sap-volume-slider:hover .sap-volume-handle {
+    opacity: 1;
+}
+
+/* Playlist Section */
+.sap-playlist {
+    border-top: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.sap-dark .sap-playlist {
+    border-top: 1px solid #374151;
+    background: #111827;
+}
+
+.sap-playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.sap-dark .sap-playlist-header {
+    border-bottom: 1px solid #374151;
+}
+
+.sap-playlist-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.sap-dark .sap-playlist-header h3 {
+    color: #ffffff;
+}
+
+.sap-playlist-count {
+    font-size: 14px;
+    color: #666;
+}
+
+.sap-dark .sap-playlist-count {
+    color: #cccccc;
+}
+
+.sap-track-count {
+    font-weight: 600;
+    color: #4f46e5;
+}
+
+/* Playlist Items */
+.sap-playlist-items {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.sap-playlist-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sap-playlist-item:hover {
+    background: rgba(79, 70, 229, 0.05);
+}
+
+.sap-playlist-item.active {
+    background: rgba(79, 70, 229, 0.1);
+}
+
+.sap-dark .sap-playlist-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sap-dark .sap-playlist-item:hover {
+    background: rgba(79, 70, 229, 0.15);
+}
+
+.sap-dark .sap-playlist-item.active {
+    background: rgba(79, 70, 229, 0.2);
+}
+
+.sap-item-number {
+    width: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.sap-dark .sap-item-number {
+    color: #cccccc;
+}
+
+.sap-playlist-item.active .sap-item-number {
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.sap-item-info {
+    flex: 1;
+    margin-left: 16px;
+    min-width: 0;
+}
+
+.sap-item-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sap-item-artist {
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sap-dark .sap-item-title {
+    color: #ffffff;
+}
+
+.sap-dark .sap-item-artist {
+    color: #cccccc;
+}
+
+.sap-item-duration {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+    margin-left: 16px;
+}
+
+.sap-dark .sap-item-duration {
+    color: #cccccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sap-player-main {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sap-artwork {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .sap-controls-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .sap-progress-container {
+        order: -1;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    
+    .sap-volume-container {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .sap-player-main {
+        padding: 16px;
+    }
+    
+    .sap-artwork {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .sap-track-title {
+        font-size: 18px;
+    }
+    
+    .sap-playlist-item {
+        padding: 8px 16px;
+    }
+}
+
+/* Loading States */
+.sap-loading .sap-seekbar-progress {
+    background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 50%, #4f46e5 100%);
+    background-size: 200% 100%;
+    animation: loading-animation 1.5s infinite;
+}
+
+@keyframes loading-animation {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Focus States for Accessibility */
+.sap-btn:focus,
+.sap-seekbar:focus,
+.sap-volume-slider:focus,
+.sap-playlist-item:focus {
+    outline: 2px solid #4f46e5;
+    outline-offset: 2px;
+}
+
+/* Playing State Indicator */
+.sap-playlist-item.playing .sap-item-number::before {
+    content: "♪";
+    color: #4f46e5;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
