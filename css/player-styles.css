@@ -27,9 +27,9 @@
     transition: box-shadow 0.3s ease, border 0.3s ease;
 }
 
-/* Active player indicator */
+/* Active player indicator - removed */
 .sap-player-wrapper.sap-active-player {
-    box-shadow: 0 8px 32px rgba(83, 130, 246, 0.2), 0 0 0 2px rgba(83, 130, 246, 0.3);
+    /* No special styling needed */
 }
 
 .sap-player-wrapper.sap-dark {
@@ -38,7 +38,7 @@
 }
 
 .sap-player-wrapper.sap-dark.sap-active-player {
-    box-shadow: 0 8px 32px rgba(83, 130, 246, 0.3), 0 0 0 2px rgba(83, 130, 246, 0.4);
+    /* No special styling needed */
 }
 
 /* Main Player Section */
@@ -78,7 +78,7 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.15s ease;
 }
 
 .sap-artwork:hover .sap-artwork-overlay {
@@ -89,19 +89,19 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.15s ease;
     font-size: 16px;
-    color: #333;
+    color: #ffffff;
     backdrop-filter: blur(10px);
 }
 
 .sap-play-pause-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     transform: scale(1.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -504,7 +504,7 @@
 }
 
 .sap-playlist-item.active .sap-item-number {
-    color: #5382F6;
+    color: #46BA74;
     font-weight: 600;
 }
 
@@ -634,7 +634,7 @@
 /* Playing State Indicator */
 .sap-playlist-item.playing .sap-item-number::before {
     content: "♪";
-    color: #5382F6;
+    color: #46BA74;
     font-size: 14px;
     margin-right: 6px;
     animation: pulse 1.5s infinite;
