@@ -54,7 +54,7 @@ class PocketAudioPlayer {
         }
 
         if (this.playlist.length > 0) {
-            this.loadTrack(0);
+            this.loadTrackAndPlay(0, false);
         }
     }
     
@@ -182,32 +182,7 @@ class PocketAudioPlayer {
         });
     }
     
-            loadTrack(index) {
-            if (index < 0 || index >= this.playlist.length) return;
-
-            this.currentTrack = index;
-            const track = this.playlist[index];
-
-            // Reset audio element state
-            this.audio.pause();
-            this.audio.currentTime = 0;
             
-            // Load new track
-            this.audio.src = track.url;
-            this.updateTrackInfo(track);
-            this.updatePlaylistHighlight();
-
-            // Wait for metadata to load before updating UI
-            const onLoadedMetadata = () => {
-                this.updateAlbumArt(track);
-                this.audio.removeEventListener('loadedmetadata', onLoadedMetadata);
-            };
-            
-            this.audio.addEventListener('loadedmetadata', onLoadedMetadata);
-            
-            // Force load if not already loading
-            this.audio.load();
-        }
     
     updateTrackInfo(track) {
         const titleEl = this.container.querySelector('.sap-track-title');
@@ -341,8 +316,13 @@ class PocketAudioPlayer {
     }
     
             previousTrack() {
-            // Prevent rapid track changes
-            if (this.isChangingTrack) return;
+            // Allow immediate track changes but queue them properly
+            if (this.isChangingTrack) {
+                // If already changing, stop current change and start new one
+                this.audio.removeEventListener('canplaythrough', this.currentLoadHandler);
+                this.audio.removeEventListener('error', this.currentErrorHandler);
+                this.isChangingTrack = false;
+            }
             
             let newIndex = this.currentTrack - 1;
             if (newIndex < 0) {
@@ -352,8 +332,13 @@ class PocketAudioPlayer {
         }
 
         nextTrack() {
-            // Prevent rapid track changes
-            if (this.isChangingTrack) return;
+            // Allow immediate track changes but queue them properly
+            if (this.isChangingTrack) {
+                // If already changing, stop current change and start new one
+                this.audio.removeEventListener('canplaythrough', this.currentLoadHandler);
+                this.audio.removeEventListener('error', this.currentErrorHandler);
+                this.isChangingTrack = false;
+            }
             
             let newIndex = this.currentTrack + 1;
             if (newIndex >= this.playlist.length) {
@@ -364,24 +349,66 @@ class PocketAudioPlayer {
     
             selectTrack(index) {
             const wasPlaying = this.isPlaying;
-            this.isChangingTrack = true; // Flag to prevent conflicts
+            this.isChangingTrack = true;
             
-            // Always pause first to ensure clean state
-            if (this.isPlaying) {
-                this.pause();
-            }
+            // Store play state before any changes
+            const shouldResume = wasPlaying;
             
-            this.loadTrack(index);
+            // Always pause and reset first
+            this.pause();
+            this.audio.currentTime = 0;
             
-            // Use a small delay to ensure track is properly loaded before playing
-            if (wasPlaying) {
-                setTimeout(() => {
-                    this.isChangingTrack = false;
-                    this.play();
-                }, 50);
-            } else {
+            // Load track and wait for it to be ready
+            this.loadTrackAndPlay(index, shouldResume);
+        }
+
+        loadTrackAndPlay(index, shouldPlay) {
+            if (index < 0 || index >= this.playlist.length) {
                 this.isChangingTrack = false;
+                return;
             }
+
+            this.currentTrack = index;
+            const track = this.playlist[index];
+
+            // Set new source
+            this.audio.src = track.url;
+            this.updateTrackInfo(track);
+            this.updatePlaylistHighlight();
+
+            // Store handlers for potential cleanup
+            this.currentLoadHandler = () => {
+                this.audio.removeEventListener('canplaythrough', this.currentLoadHandler);
+                this.audio.removeEventListener('error', this.currentErrorHandler);
+                
+                this.updateAlbumArt(track);
+                this.isChangingTrack = false;
+                
+                if (shouldPlay) {
+                    // Use a very small delay to ensure everything is settled
+                    setTimeout(() => {
+                        if (!this.isChangingTrack) { // Double-check we're not changing again
+                            this.play();
+                        }
+                    }, 10);
+                }
+            };
+
+            this.currentErrorHandler = () => {
+                this.audio.removeEventListener('canplaythrough', this.currentLoadHandler);
+                this.audio.removeEventListener('error', this.currentErrorHandler);
+                
+                console.error('Failed to load track:', track.url);
+                this.updateAlbumArt(track);
+                this.isChangingTrack = false;
+            };
+
+            // Listen for when audio is ready to play
+            this.audio.addEventListener('canplaythrough', this.currentLoadHandler);
+            this.audio.addEventListener('error', this.currentErrorHandler);
+            
+            // Force load the new track
+            this.audio.load();
         }
     
     seek(event) {
