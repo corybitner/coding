@@ -173,19 +173,41 @@ class PocketAudioPlayer {
     }
     
     private function parse_m3u_file($file_path) {
+        // Sanitize file path to prevent directory traversal
+        $file_path = sanitize_text_field($file_path);
+        
         // Handle both URL and file path
         if (filter_var($file_path, FILTER_VALIDATE_URL)) {
-            $content = wp_remote_get($file_path);
-            if (is_wp_error($content)) {
+            // Only allow HTTPS URLs for security
+            if (strpos($file_path, 'https://') !== 0) {
                 return array();
             }
-            $content = wp_remote_retrieve_body($content);
-        } else {
-            // Try to find file in uploads directory
-            $upload_dir = wp_upload_dir();
-            $full_path = $upload_dir['basedir'] . '/' . ltrim($file_path, '/');
             
-            if (!file_exists($full_path)) {
+            $args = array(
+                'timeout' => 10,
+                'user-agent' => 'Pocket Audio Player/1.0',
+                'sslverify' => true
+            );
+            
+            $response = wp_remote_get($file_path, $args);
+            if (is_wp_error($response)) {
+                return array();
+            }
+            
+            $content = wp_remote_retrieve_body($response);
+        } else {
+            // Sanitize filename and restrict to uploads directory
+            $filename = sanitize_file_name(basename($file_path));
+            $upload_dir = wp_upload_dir();
+            $full_path = $upload_dir['basedir'] . '/pocket-audio-playlists/' . $filename;
+            
+            // Verify file exists and is within allowed directory
+            if (!file_exists($full_path) || strpos(realpath($full_path), realpath($upload_dir['basedir'])) !== 0) {
+                return array();
+            }
+            
+            // Check file size (limit to 1MB)
+            if (filesize($full_path) > 1048576) {
                 return array();
             }
             
@@ -194,6 +216,11 @@ class PocketAudioPlayer {
         
         if (empty($content)) {
             return array();
+        }
+        
+        // Limit content size for parsing
+        if (strlen($content) > 1048576) {
+            $content = substr($content, 0, 1048576);
         }
         
         return $this->parse_m3u_content($content);
@@ -263,8 +290,13 @@ class PocketAudioPlayer {
         return sprintf('%d:%02d', $minutes, $seconds);
     }
     
-               public function handle_m3u_upload() {
-               check_ajax_referer('pap_nonce', 'nonce');
+                   public function handle_m3u_upload() {
+        // Verify user permissions
+        if (!current_user_can('upload_files')) {
+            wp_die('Insufficient permissions');
+        }
+        
+        check_ajax_referer('pap_nonce', 'nonce');
         
         if (!isset($_FILES['m3u_file'])) {
             wp_die('No file uploaded');
