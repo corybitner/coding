@@ -561,46 +561,60 @@
     color: #cccccc;
 }
 
-/* Responsive Design */
+/* Responsive Design - Immediate collapse on mobile */
 @media (max-width: 768px) {
     .sap-player-main {
         flex-direction: column;
         text-align: center;
-        padding: 16px;
+        padding: 12px;
+        gap: 12px;
     }
     
+    /* Hide artwork completely for immediate collapse */
     .sap-artwork {
-        width: 100px;
-        height: 100px;
+        display: none;
+    }
+    
+    .sap-track-info {
+        margin-bottom: 8px;
+    }
+    
+    .sap-track-title {
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
+    
+    .sap-track-artist {
+        font-size: 12px;
     }
     
     .sap-controls-bar {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 8px;
     }
     
     .sap-progress-container {
         order: -1;
         width: 100%;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
     }
     
     .sap-volume-container {
         display: none;
     }
-}
-
-@media (max-width: 480px) {
-    .sap-player-main {
-        padding: 12px;
+    
+    /* Compact buttons */
+    .sap-btn {
+        min-width: 32px;
+        height: 32px;
+        padding: 6px;
+        font-size: 14px;
     }
     
-    .sap-artwork {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .sap-track-title {
+    .sap-play-pause-main {
+        width: 36px;
+        height: 36px;
         font-size: 16px;
     }
     
