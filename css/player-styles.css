@@ -444,12 +444,16 @@
 }
 
 .sap-item-number {
-    width: 24px;
+    width: 40px;
     text-align: center;
     font-size: 12px;
     color: #666;
     font-weight: 500;
     flex-shrink: 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sap-dark .sap-item-number {
@@ -586,10 +590,9 @@
 
 /* Playing State Indicator */
 .sap-playlist-item.playing .sap-item-number::before {
-    content: "♪";
+    content: "♪ ";
     color: #5382F6;
     font-size: 14px;
-    margin-right: 4px;
     animation: pulse 1.5s infinite;
 }
 

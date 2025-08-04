@@ -188,13 +188,24 @@ class SimpleAudioPlayer {
     
     updateAlbumArt(track) {
         const artImg = this.container.querySelector('.sap-album-art');
-        if (!artImg) return;
-        
-        // Set a default gradient background
         const artwork = this.container.querySelector('.sap-artwork');
-        artwork.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-        
-        // Try to extract album art from audio file
+        if (!artImg) return;
+
+        // Check if track has a thumbnail from M3U
+        if (track.thumbnail) {
+            artImg.src = track.thumbnail;
+            artImg.style.display = 'block';
+            artwork.style.background = 'none';
+            return;
+        }
+
+        // Use default audio poster
+        const defaultPoster = window.location.origin + '/wp-content/plugins/pocket-audio-player/assets/audio-poster.svg';
+        artImg.src = defaultPoster;
+        artImg.style.display = 'block';
+        artwork.style.background = 'none';
+
+        // Try to extract album art from audio file (will override default if found)
         if (window.jsmediatags) {
             jsmediatags.read(track.url, {
                 onSuccess: (tag) => {
@@ -207,17 +218,16 @@ class SimpleAudioPlayer {
                         const dataUrl = `data:${image.format};base64,${base64}`;
                         artImg.src = dataUrl;
                         artImg.style.display = 'block';
-                    } else {
-                        artImg.style.display = 'none';
+                        artwork.style.background = 'none';
                     }
+                    // If no ID3 art found, keep the default poster
                 },
                 onError: () => {
-                    artImg.style.display = 'none';
+                    // Keep the default poster on error
                 }
             });
-        } else {
-            artImg.style.display = 'none';
         }
+        // If no jsmediatags library, keep the default poster
     }
     
     updatePlaylistHighlight() {
