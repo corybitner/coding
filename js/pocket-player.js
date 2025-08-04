@@ -103,9 +103,11 @@ class PocketAudioPlayer {
             volumeSlider.addEventListener('mousedown', (e) => this.startVolumeChange(e));
         }
         
-        // Playlist items
+        // Playlist items - auto-play when clicked
         this.container.querySelectorAll('.sap-playlist-item').forEach((item, index) => {
-            item.addEventListener('click', () => this.selectTrack(index));
+            item.addEventListener('click', () => {
+                this.selectTrack(index, true); // Force play when clicked
+            });
         });
 
         // Make this player active when clicked anywhere on it
@@ -342,10 +344,10 @@ class PocketAudioPlayer {
             this.selectTrack(newIndex);
         }
     
-            selectTrack(index) {
+            selectTrack(index, forcePlay = false) {
             if (index < 0 || index >= this.playlist.length) return;
             
-            const wasPlaying = this.isPlaying;
+            const wasPlaying = this.isPlaying || forcePlay;
             
             // Clear any pending operations
             if (this.loadTimeout) {
