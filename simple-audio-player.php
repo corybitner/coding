@@ -196,13 +196,35 @@ class PocketAudioPlayer {
             
             $content = wp_remote_retrieve_body($response);
         } else {
-            // Sanitize filename and restrict to uploads directory
-            $filename = sanitize_file_name(basename($file_path));
             $upload_dir = wp_upload_dir();
-            $full_path = $upload_dir['basedir'] . '/pocket-audio-playlists/' . $filename;
             
-            // Verify file exists and is within allowed directory
-            if (!file_exists($full_path) || strpos(realpath($full_path), realpath($upload_dir['basedir'])) !== 0) {
+            // Try multiple possible locations for the M3U file
+            $possible_paths = array();
+            
+            // 1. Direct path in uploads folder
+            $possible_paths[] = $upload_dir['basedir'] . '/' . ltrim($file_path, '/');
+            
+            // 2. In pocket-audio-playlists subfolder
+            $filename = sanitize_file_name(basename($file_path));
+            $possible_paths[] = $upload_dir['basedir'] . '/pocket-audio-playlists/' . $filename;
+            
+            // 3. Just the filename in uploads root
+            $possible_paths[] = $upload_dir['basedir'] . '/' . $filename;
+            
+            $full_path = null;
+            foreach ($possible_paths as $path) {
+                if (file_exists($path)) {
+                    // Security check: ensure file is within uploads directory
+                    $real_path = realpath($path);
+                    $real_uploads = realpath($upload_dir['basedir']);
+                    if ($real_path && $real_uploads && strpos($real_path, $real_uploads) === 0) {
+                        $full_path = $path;
+                        break;
+                    }
+                }
+            }
+            
+            if (!$full_path) {
                 return array();
             }
             
