@@ -200,7 +200,7 @@ class SimpleAudioPlayer {
         }
 
         // Use default audio poster
-        const defaultPoster = window.location.origin + '/wp-content/plugins/pocket-audio-player/assets/audio-poster.jpg';
+        const defaultPoster = pap_ajax.plugin_url + 'assets/audio-poster.jpg';
         artImg.src = defaultPoster;
         artImg.style.display = 'block';
         artwork.style.background = 'none';

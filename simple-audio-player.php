@@ -40,7 +40,8 @@ class PocketAudioPlayer {
         
                    wp_localize_script('pap-player', 'pap_ajax', array(
             'ajax_url' => admin_url('admin-ajax.php'),
-                           'nonce' => wp_create_nonce('pap_nonce')
+            'nonce' => wp_create_nonce('pap_nonce'),
+            'plugin_url' => PAP_PLUGIN_URL
         ));
     }
     

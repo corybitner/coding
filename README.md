@@ -1,6 +1,6 @@
 # Pocket Audio Player
 
-A lightweight WordPress audio player plugin with M3U playlist support, keyboard controls, and beautiful modern design. This is a slimmed-down version of the Modern Audio Player, removing bloat while keeping the core functionality you love.
+A lightweight WordPress audio player plugin with M3U playlist support, keyboard controls, and beautiful modern design. Built from the ground up to be fast, simple, and efficient.
 
 ## ✨ Features
 
@@ -129,9 +129,9 @@ add_filter('upload_mimes', function($mimes) {
 });
 ```
 
-## 🆚 Comparison with Original
+## 🆚 Comparison with Heavy Players
 
-| Feature | Original | Pocket Audio Player |
+| Feature | Heavy Players | Pocket Audio Player |
 |---------|----------|-------------------|
 | **File Size** | 5,680+ lines | ~1,000 lines |
 | **Files** | 300+ files | 4 files |
@@ -179,13 +179,13 @@ http://stream.jazz-radio.com:8000/jazz
 http://stream.classical.fm:8000/classical
 ```
 
-## 🔄 Migration from Modern Audio Player
+## 🔄 Migration from Other Players
 
 1. **Export your playlists** as M3U files
-2. **Deactivate** Modern Audio Player
+2. **Deactivate** your current audio player
 3. **Install** Pocket Audio Player
 4. **Upload M3U files** to media library
-5. **Replace shortcodes** with `[pocket_audio_playlist]`
+5. **Use shortcode** `[pocket_audio_playlist]`
 
 ## 📄 License
 
@@ -197,4 +197,4 @@ Feel free to submit issues and pull requests on GitHub.
 
 ## ✨ Credits
 
-Based on the Modern Audio Player by Tean, slimmed down to focus on core functionality with M3U playlist support and modern design.
+A completely independent WordPress audio player built to focus on core functionality with M3U playlist support and modern design.
