@@ -26,19 +26,32 @@ class PocketAudioPlayer {
         this.isPlaying = false;
         this.isDragging = false;
         this.volume = this.options.volume;
-        this.isMuted = false;
-                       this.currentPlaybackRate = 1;
-        
-        this.init();
+                this.isMuted = false;
+        this.currentPlaybackRate = 1;
+        this.isActive = false; // Track which player is active for keyboard controls
+
+        // Register this player globally for multi-player management
+        if (!window.pocketAudioPlayers) {
+            window.pocketAudioPlayers = [];
+        }
+        window.pocketAudioPlayers.push(this);
+
+                this.init();
     }
-    
+
     init() {
         this.loadPlaylist();
         this.bindEvents();
         this.setupKeyboardControls();
         this.audio.volume = this.volume;
         this.updateVolumeDisplay();
-        
+
+        // Set as active if it's the first player or no active player exists
+        const hasActivePlayer = window.pocketAudioPlayers?.some(player => player.isActive);
+        if (!hasActivePlayer) {
+            this.setActivePlayer();
+        }
+
         if (this.playlist.length > 0) {
             this.loadTrack(0);
         }
@@ -93,6 +106,9 @@ class PocketAudioPlayer {
         this.container.querySelectorAll('.sap-playlist-item').forEach((item, index) => {
             item.addEventListener('click', () => this.selectTrack(index));
         });
+
+        // Make this player active when clicked anywhere on it
+        this.container.addEventListener('click', () => this.setActivePlayer());
         
         // Audio events
         this.audio.addEventListener('loadedmetadata', () => this.onLoadedMetadata());
@@ -107,15 +123,16 @@ class PocketAudioPlayer {
         document.addEventListener('mouseup', () => this.stopDragging());
     }
     
-    setupKeyboardControls() {
-        if (!this.options.keyboardControls) return;
-        
-        document.addEventListener('keydown', (e) => {
-            // Only handle if the player container is in focus or no input is focused
-            if (document.activeElement?.tagName === 'INPUT' || 
-                document.activeElement?.tagName === 'TEXTAREA') {
-                return;
-            }
+            setupKeyboardControls() {
+            if (!this.options.keyboardControls) return;
+
+            document.addEventListener('keydown', (e) => {
+                // Only handle if this player is active and no input is focused
+                if (!this.isActive || 
+                    document.activeElement?.tagName === 'INPUT' ||
+                    document.activeElement?.tagName === 'TEXTAREA') {
+                    return;
+                }
             
             switch (e.code) {
                 case 'Space':
@@ -200,10 +217,25 @@ class PocketAudioPlayer {
         }
 
         // Use default audio poster
-        const defaultPoster = pap_ajax.plugin_url + 'assets/audio-poster.jpg';
-        artImg.src = defaultPoster;
-        artImg.style.display = 'block';
-        artwork.style.background = 'none';
+        try {
+            const defaultPoster = (typeof pap_ajax !== 'undefined' && pap_ajax.plugin_url) 
+                ? pap_ajax.plugin_url + 'assets/audio-poster.jpg'
+                : '/wp-content/plugins/pocket-audio-player/assets/audio-poster.jpg';
+            
+            artImg.src = defaultPoster;
+            artImg.style.display = 'block';
+            artwork.style.background = 'none';
+            
+            // Handle image load error
+            artImg.onerror = () => {
+                artImg.style.display = 'none';
+                artwork.style.background = 'linear-gradient(135deg, #5382F6 0%, #46BA74 100%)';
+            };
+        } catch (error) {
+            // Fallback to gradient if there's any error
+            artImg.style.display = 'none';
+            artwork.style.background = 'linear-gradient(135deg, #5382F6 0%, #46BA74 100%)';
+        }
 
         // Try to extract album art from audio file (will override default if found)
         if (window.jsmediatags) {
@@ -245,18 +277,22 @@ class PocketAudioPlayer {
         }
     }
     
-    play() {
-        const playPromise = this.audio.play();
-        if (playPromise !== undefined) {
-            playPromise.then(() => {
-                this.isPlaying = true;
-                this.updatePlayPauseButtons();
-                this.updatePlaylistHighlight();
-            }).catch((error) => {
-                console.error('Playback failed:', error);
-            });
+            play() {
+            // Auto-pause other players when this one starts
+            this.pauseAllOtherPlayers();
+            this.setActivePlayer();
+            
+            const playPromise = this.audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    this.isPlaying = true;
+                    this.updatePlayPauseButtons();
+                    this.updatePlaylistHighlight();
+                }).catch((error) => {
+                    console.error('Playback failed:', error);
+                });
+            }
         }
-    }
     
     pause() {
         this.audio.pause();
@@ -339,9 +375,34 @@ class PocketAudioPlayer {
                this.updateVolumeDisplay();
            }
 
-           rewindToStart() {
-               this.audio.currentTime = 0;
-           }
+                   rewindToStart() {
+            this.audio.currentTime = 0;
+        }
+
+        // Multi-player management methods
+        setActivePlayer() {
+            // Deactivate all other players
+            if (window.pocketAudioPlayers) {
+                window.pocketAudioPlayers.forEach(player => {
+                    player.isActive = false;
+                    player.container.classList.remove('sap-active-player');
+                });
+            }
+            
+            // Activate this player
+            this.isActive = true;
+            this.container.classList.add('sap-active-player');
+        }
+
+        pauseAllOtherPlayers() {
+            if (window.pocketAudioPlayers) {
+                window.pocketAudioPlayers.forEach(player => {
+                    if (player !== this && player.isPlaying) {
+                        player.pause();
+                    }
+                });
+            }
+        }
     
     toggleMute() {
         this.isMuted = !this.isMuted;
