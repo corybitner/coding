@@ -14,12 +14,11 @@ define('PAP_PLUGIN_PATH', plugin_dir_path(__FILE__));
 
 class PocketAudioPlayer {
     
-    public function __construct() {
+        public function __construct() {
         add_action('init', array($this, 'init'));
-        add_action('wp_enqueue_scripts', array($this, 'enqueue_scripts'));
         add_shortcode('simple_audio_playlist', array($this, 'render_playlist'));
-                       add_action('wp_ajax_pap_upload_m3u', array($this, 'handle_m3u_upload'));
-               add_action('wp_ajax_nopriv_pap_upload_m3u', array($this, 'handle_m3u_upload'));
+        add_action('wp_ajax_pap_upload_m3u', array($this, 'handle_m3u_upload'));
+        add_action('wp_ajax_nopriv_pap_upload_m3u', array($this, 'handle_m3u_upload'));
         register_activation_hook(__FILE__, array($this, 'activate'));
         register_deactivation_hook(__FILE__, array($this, 'deactivate'));
     }
@@ -45,7 +44,10 @@ class PocketAudioPlayer {
         ));
     }
     
-    public function render_playlist($atts) {
+        public function render_playlist($atts) {
+        // Enqueue assets only when shortcode is used
+        $this->enqueue_scripts();
+        
         $atts = shortcode_atts(array(
             'file' => '',
             'width' => '100%',
@@ -53,11 +55,11 @@ class PocketAudioPlayer {
             'autoplay' => false,
             'theme' => 'light' // light or dark
         ), $atts);
-        
+
         if (empty($atts['file'])) {
             return '<p>Error: Please specify an M3U file.</p>';
         }
-        
+
         $playlist_data = $this->parse_m3u_file($atts['file']);
         if (empty($playlist_data)) {
             return '<p>Error: Could not load playlist file.</p>';
