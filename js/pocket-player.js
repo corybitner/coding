@@ -29,7 +29,6 @@ class PocketAudioPlayer {
                 this.isMuted = false;
         this.currentPlaybackRate = 1;
         this.isActive = false; // Track which player is active for keyboard controls
-        this.loadTimeout = null; // Store timeout for cleanup
 
         // Register this player globally for multi-player management
         if (!window.pocketAudioPlayers) {
@@ -106,7 +105,7 @@ class PocketAudioPlayer {
         // Playlist items - auto-play when clicked
         this.container.querySelectorAll('.sap-playlist-item').forEach((item, index) => {
             item.addEventListener('click', () => {
-                this.selectTrack(index, true); // Force play when clicked
+                this.selectAndPlayTrack(index); // Always play when clicked
             });
         });
 
@@ -344,98 +343,34 @@ class PocketAudioPlayer {
             this.selectTrack(newIndex);
         }
     
-            selectTrack(index, forcePlay = false) {
-            if (index < 0 || index >= this.playlist.length) return;
-            
-            const wasPlaying = this.isPlaying || forcePlay;
-            
-            // Clear any pending operations
-            if (this.loadTimeout) {
-                clearTimeout(this.loadTimeout);
-                this.loadTimeout = null;
-            }
-            
-            // Immediately pause current track
+            selectTrack(index) {
+            const wasPlaying = this.isPlaying;
             this.pause();
-            this.audio.currentTime = 0;
-            
-            // Set new track immediately for UI feedback
+            this.loadTrack(index);
+            if (wasPlaying) {
+                this.play();
+            }
+        }
+
+        // Separate method for click-to-play
+        selectAndPlayTrack(index) {
+            this.pause();
+            this.loadTrack(index);
+            this.play(); // Always play when clicked
+        }
+
+        loadTrack(index) {
+            if (index < 0 || index >= this.playlist.length) return;
+
             this.currentTrack = index;
             const track = this.playlist[index];
+
+            this.audio.src = track.url;
             this.updateTrackInfo(track);
             this.updatePlaylistHighlight();
-            
-            // Load and potentially play the new track
-            this.loadNewTrack(track, wasPlaying);
-        }
 
-        loadNewTrack(track, shouldAutoPlay) {
-            // Set the new audio source
-            this.audio.src = track.url;
+            // Try to get album art from ID3 tags or use default
             this.updateAlbumArt(track);
-            
-            // Use a more aggressive approach for auto-play
-            if (shouldAutoPlay) {
-                // Try multiple strategies to ensure playback
-                this.attemptAutoPlay();
-            }
-        }
-
-        attemptAutoPlay() {
-            // Strategy 1: Try to play immediately
-            const playImmediately = () => {
-                const playPromise = this.audio.play();
-                if (playPromise !== undefined) {
-                    playPromise.then(() => {
-                        this.isPlaying = true;
-                        this.updatePlayPauseButtons();
-                        this.updatePlaylistHighlight();
-                    }).catch(() => {
-                        // Strategy 2: Wait for loadeddata and try again
-                        this.waitAndRetryPlay();
-                    });
-                } else {
-                    // Fallback for older browsers
-                    this.waitAndRetryPlay();
-                }
-            };
-
-            // Try immediately first
-            playImmediately();
-        }
-
-        waitAndRetryPlay() {
-            const retryPlay = () => {
-                this.audio.removeEventListener('loadeddata', retryPlay);
-                this.audio.removeEventListener('canplay', retryPlay);
-                
-                // Clear any existing timeout
-                if (this.loadTimeout) {
-                    clearTimeout(this.loadTimeout);
-                }
-                
-                // Try playing with a small delay
-                this.loadTimeout = setTimeout(() => {
-                    const playPromise = this.audio.play();
-                    if (playPromise !== undefined) {
-                        playPromise.then(() => {
-                            this.isPlaying = true;
-                            this.updatePlayPauseButtons();
-                            this.updatePlaylistHighlight();
-                        }).catch((error) => {
-                            console.warn('Auto-play failed:', error);
-                            // Don't update playing state if it failed
-                        });
-                    }
-                }, 100);
-            };
-
-            // Listen for multiple audio ready events
-            this.audio.addEventListener('loadeddata', retryPlay);
-            this.audio.addEventListener('canplay', retryPlay);
-            
-            // Force load
-            this.audio.load();
         }
     
     seek(event) {
