@@ -27,13 +27,13 @@ A lightweight WordPress audio player plugin with M3U playlist support, keyboard 
 Upload an M3U file to your media library, then use:
 
 ```php
-[simple_audio_playlist file="my-playlist.m3u"]
+[pocket_audio_playlist file="my-playlist.m3u"]
 ```
 
 ### Advanced Usage
 
 ```php
-[simple_audio_playlist file="my-playlist.m3u" theme="dark" width="600px" autoplay="true"]
+[pocket_audio_playlist file="my-playlist.m3u" theme="dark" width="600px" autoplay="true"]
 ```
 
 ### Shortcode Parameters
@@ -87,7 +87,7 @@ Clean, bright design perfect for most websites.
 Elegant dark design for dark websites or user preference.
 
 ```php
-[simple_audio_playlist file="playlist.m3u" theme="dark"]
+[pocket_audio_playlist file="playlist.m3u" theme="dark"]
 ```
 
 ## 📁 File Structure
@@ -185,7 +185,7 @@ http://stream.classical.fm:8000/classical
 2. **Deactivate** Modern Audio Player
 3. **Install** Pocket Audio Player
 4. **Upload M3U files** to media library
-5. **Replace shortcodes** with `[simple_audio_playlist]`
+5. **Replace shortcodes** with `[pocket_audio_playlist]`
 
 ## 📄 License
 

@@ -16,7 +16,7 @@ class PocketAudioPlayer {
     
         public function __construct() {
         add_action('init', array($this, 'init'));
-        add_shortcode('simple_audio_playlist', array($this, 'render_playlist'));
+        add_shortcode('pocket_audio_playlist', array($this, 'render_playlist'));
         add_action('wp_ajax_pap_upload_m3u', array($this, 'handle_m3u_upload'));
         add_action('wp_ajax_nopriv_pap_upload_m3u', array($this, 'handle_m3u_upload'));
         register_activation_hook(__FILE__, array($this, 'activate'));
