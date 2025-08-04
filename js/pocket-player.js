@@ -29,7 +29,7 @@ class PocketAudioPlayer {
                 this.isMuted = false;
         this.currentPlaybackRate = 1;
         this.isActive = false; // Track which player is active for keyboard controls
-        this.isChangingTrack = false; // Flag to prevent rapid track changes
+        this.loadTimeout = null; // Store timeout for cleanup
 
         // Register this player globally for multi-player management
         if (!window.pocketAudioPlayers) {
@@ -54,7 +54,7 @@ class PocketAudioPlayer {
         }
 
         if (this.playlist.length > 0) {
-            this.loadTrackAndPlay(0, false);
+            this.selectTrack(0);
         }
     }
     
@@ -127,9 +127,20 @@ class PocketAudioPlayer {
             setupKeyboardControls() {
             if (!this.options.keyboardControls) return;
 
+            // Track hover state
+            this.isHovered = false;
+            
+            this.container.addEventListener('mouseenter', () => {
+                this.isHovered = true;
+            });
+            
+            this.container.addEventListener('mouseleave', () => {
+                this.isHovered = false;
+            });
+
             document.addEventListener('keydown', (e) => {
-                // Only handle if this player is active and no input is focused
-                if (!this.isActive || 
+                // Only handle if this player is hovered and no input is focused
+                if (!this.isHovered || 
                     document.activeElement?.tagName === 'INPUT' ||
                     document.activeElement?.tagName === 'TEXTAREA') {
                     return;
@@ -316,14 +327,6 @@ class PocketAudioPlayer {
     }
     
             previousTrack() {
-            // Allow immediate track changes but queue them properly
-            if (this.isChangingTrack) {
-                // If already changing, stop current change and start new one
-                this.audio.removeEventListener('canplaythrough', this.currentLoadHandler);
-                this.audio.removeEventListener('error', this.currentErrorHandler);
-                this.isChangingTrack = false;
-            }
-            
             let newIndex = this.currentTrack - 1;
             if (newIndex < 0) {
                 newIndex = this.playlist.length - 1;
@@ -332,14 +335,6 @@ class PocketAudioPlayer {
         }
 
         nextTrack() {
-            // Allow immediate track changes but queue them properly
-            if (this.isChangingTrack) {
-                // If already changing, stop current change and start new one
-                this.audio.removeEventListener('canplaythrough', this.currentLoadHandler);
-                this.audio.removeEventListener('error', this.currentErrorHandler);
-                this.isChangingTrack = false;
-            }
-            
             let newIndex = this.currentTrack + 1;
             if (newIndex >= this.playlist.length) {
                 newIndex = 0;
@@ -348,66 +343,96 @@ class PocketAudioPlayer {
         }
     
             selectTrack(index) {
+            if (index < 0 || index >= this.playlist.length) return;
+            
             const wasPlaying = this.isPlaying;
-            this.isChangingTrack = true;
             
-            // Store play state before any changes
-            const shouldResume = wasPlaying;
+            // Clear any pending operations
+            if (this.loadTimeout) {
+                clearTimeout(this.loadTimeout);
+                this.loadTimeout = null;
+            }
             
-            // Always pause and reset first
+            // Immediately pause current track
             this.pause();
             this.audio.currentTime = 0;
             
-            // Load track and wait for it to be ready
-            this.loadTrackAndPlay(index, shouldResume);
-        }
-
-        loadTrackAndPlay(index, shouldPlay) {
-            if (index < 0 || index >= this.playlist.length) {
-                this.isChangingTrack = false;
-                return;
-            }
-
+            // Set new track immediately for UI feedback
             this.currentTrack = index;
             const track = this.playlist[index];
-
-            // Set new source
-            this.audio.src = track.url;
             this.updateTrackInfo(track);
             this.updatePlaylistHighlight();
+            
+            // Load and potentially play the new track
+            this.loadNewTrack(track, wasPlaying);
+        }
 
-            // Store handlers for potential cleanup
-            this.currentLoadHandler = () => {
-                this.audio.removeEventListener('canplaythrough', this.currentLoadHandler);
-                this.audio.removeEventListener('error', this.currentErrorHandler);
-                
-                this.updateAlbumArt(track);
-                this.isChangingTrack = false;
-                
-                if (shouldPlay) {
-                    // Use a very small delay to ensure everything is settled
-                    setTimeout(() => {
-                        if (!this.isChangingTrack) { // Double-check we're not changing again
-                            this.play();
-                        }
-                    }, 10);
+        loadNewTrack(track, shouldAutoPlay) {
+            // Set the new audio source
+            this.audio.src = track.url;
+            this.updateAlbumArt(track);
+            
+            // Use a more aggressive approach for auto-play
+            if (shouldAutoPlay) {
+                // Try multiple strategies to ensure playback
+                this.attemptAutoPlay();
+            }
+        }
+
+        attemptAutoPlay() {
+            // Strategy 1: Try to play immediately
+            const playImmediately = () => {
+                const playPromise = this.audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        this.isPlaying = true;
+                        this.updatePlayPauseButtons();
+                        this.updatePlaylistHighlight();
+                    }).catch(() => {
+                        // Strategy 2: Wait for loadeddata and try again
+                        this.waitAndRetryPlay();
+                    });
+                } else {
+                    // Fallback for older browsers
+                    this.waitAndRetryPlay();
                 }
             };
 
-            this.currentErrorHandler = () => {
-                this.audio.removeEventListener('canplaythrough', this.currentLoadHandler);
-                this.audio.removeEventListener('error', this.currentErrorHandler);
+            // Try immediately first
+            playImmediately();
+        }
+
+        waitAndRetryPlay() {
+            const retryPlay = () => {
+                this.audio.removeEventListener('loadeddata', retryPlay);
+                this.audio.removeEventListener('canplay', retryPlay);
                 
-                console.error('Failed to load track:', track.url);
-                this.updateAlbumArt(track);
-                this.isChangingTrack = false;
+                // Clear any existing timeout
+                if (this.loadTimeout) {
+                    clearTimeout(this.loadTimeout);
+                }
+                
+                // Try playing with a small delay
+                this.loadTimeout = setTimeout(() => {
+                    const playPromise = this.audio.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            this.isPlaying = true;
+                            this.updatePlayPauseButtons();
+                            this.updatePlaylistHighlight();
+                        }).catch((error) => {
+                            console.warn('Auto-play failed:', error);
+                            // Don't update playing state if it failed
+                        });
+                    }
+                }, 100);
             };
 
-            // Listen for when audio is ready to play
-            this.audio.addEventListener('canplaythrough', this.currentLoadHandler);
-            this.audio.addEventListener('error', this.currentErrorHandler);
+            // Listen for multiple audio ready events
+            this.audio.addEventListener('loadeddata', retryPlay);
+            this.audio.addEventListener('canplay', retryPlay);
             
-            // Force load the new track
+            // Force load
             this.audio.load();
         }
     
