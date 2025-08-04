@@ -29,6 +29,7 @@ class PocketAudioPlayer {
                 this.isMuted = false;
         this.currentPlaybackRate = 1;
         this.isActive = false; // Track which player is active for keyboard controls
+        this.isChangingTrack = false; // Flag to prevent rapid track changes
 
         // Register this player globally for multi-player management
         if (!window.pocketAudioPlayers) {
@@ -181,19 +182,32 @@ class PocketAudioPlayer {
         });
     }
     
-    loadTrack(index) {
-        if (index < 0 || index >= this.playlist.length) return;
-        
-        this.currentTrack = index;
-        const track = this.playlist[index];
-        
-        this.audio.src = track.url;
-        this.updateTrackInfo(track);
-        this.updatePlaylistHighlight();
-        
-        // Try to get album art from ID3 tags or use default
-        this.updateAlbumArt(track);
-    }
+            loadTrack(index) {
+            if (index < 0 || index >= this.playlist.length) return;
+
+            this.currentTrack = index;
+            const track = this.playlist[index];
+
+            // Reset audio element state
+            this.audio.pause();
+            this.audio.currentTime = 0;
+            
+            // Load new track
+            this.audio.src = track.url;
+            this.updateTrackInfo(track);
+            this.updatePlaylistHighlight();
+
+            // Wait for metadata to load before updating UI
+            const onLoadedMetadata = () => {
+                this.updateAlbumArt(track);
+                this.audio.removeEventListener('loadedmetadata', onLoadedMetadata);
+            };
+            
+            this.audio.addEventListener('loadedmetadata', onLoadedMetadata);
+            
+            // Force load if not already loading
+            this.audio.load();
+        }
     
     updateTrackInfo(track) {
         const titleEl = this.container.querySelector('.sap-track-title');
@@ -262,12 +276,37 @@ class PocketAudioPlayer {
         // If no jsmediatags library, keep the default poster
     }
     
-    updatePlaylistHighlight() {
-        this.container.querySelectorAll('.sap-playlist-item').forEach((item, index) => {
-            item.classList.toggle('active', index === this.currentTrack);
-            item.classList.toggle('playing', index === this.currentTrack && this.isPlaying);
-        });
-    }
+            updatePlaylistHighlight() {
+            this.container.querySelectorAll('.sap-playlist-item').forEach((item, index) => {
+                item.classList.toggle('active', index === this.currentTrack);
+                item.classList.toggle('playing', index === this.currentTrack && this.isPlaying);
+            });
+            
+            // Scroll current track into view
+            this.scrollCurrentTrackIntoView();
+        }
+
+        scrollCurrentTrackIntoView() {
+            const currentItem = this.container.querySelector('.sap-playlist-item.active');
+            const playlistContainer = this.container.querySelector('.sap-playlist-items');
+            
+            if (currentItem && playlistContainer) {
+                const containerRect = playlistContainer.getBoundingClientRect();
+                const itemRect = currentItem.getBoundingClientRect();
+                
+                // Check if item is outside visible area
+                const isAbove = itemRect.top < containerRect.top;
+                const isBelow = itemRect.bottom > containerRect.bottom;
+                
+                if (isAbove || isBelow) {
+                    currentItem.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center',
+                        inline: 'nearest'
+                    });
+                }
+            }
+        }
     
     togglePlayPause() {
         if (this.isPlaying) {
@@ -301,30 +340,49 @@ class PocketAudioPlayer {
         this.updatePlaylistHighlight();
     }
     
-    previousTrack() {
-        let newIndex = this.currentTrack - 1;
-        if (newIndex < 0) {
-            newIndex = this.playlist.length - 1;
+            previousTrack() {
+            // Prevent rapid track changes
+            if (this.isChangingTrack) return;
+            
+            let newIndex = this.currentTrack - 1;
+            if (newIndex < 0) {
+                newIndex = this.playlist.length - 1;
+            }
+            this.selectTrack(newIndex);
         }
-        this.selectTrack(newIndex);
-    }
+
+        nextTrack() {
+            // Prevent rapid track changes
+            if (this.isChangingTrack) return;
+            
+            let newIndex = this.currentTrack + 1;
+            if (newIndex >= this.playlist.length) {
+                newIndex = 0;
+            }
+            this.selectTrack(newIndex);
+        }
     
-    nextTrack() {
-        let newIndex = this.currentTrack + 1;
-        if (newIndex >= this.playlist.length) {
-            newIndex = 0;
+            selectTrack(index) {
+            const wasPlaying = this.isPlaying;
+            this.isChangingTrack = true; // Flag to prevent conflicts
+            
+            // Always pause first to ensure clean state
+            if (this.isPlaying) {
+                this.pause();
+            }
+            
+            this.loadTrack(index);
+            
+            // Use a small delay to ensure track is properly loaded before playing
+            if (wasPlaying) {
+                setTimeout(() => {
+                    this.isChangingTrack = false;
+                    this.play();
+                }, 50);
+            } else {
+                this.isChangingTrack = false;
+            }
         }
-        this.selectTrack(newIndex);
-    }
-    
-    selectTrack(index) {
-        const wasPlaying = this.isPlaying;
-        this.pause();
-        this.loadTrack(index);
-        if (wasPlaying) {
-            this.play();
-        }
-    }
     
     seek(event) {
         if (this.isDragging) return;
