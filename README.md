@@ -94,11 +94,11 @@ Elegant dark design for dark websites or user preference.
 
 ```
 pocket-audio-player/
-├── simple-audio-player.php    # Main plugin file
+├── pocket-audio-player.php    # Main plugin file
 ├── css/
 │   └── player-styles.css      # Modern theme styles
 ├── js/
-│   └── simple-player.js       # Core player functionality
+│   └── pocket-player.js       # Core player functionality
 └── README.md                  # This file
 ```
 
