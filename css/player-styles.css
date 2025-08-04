@@ -29,7 +29,7 @@
 
 /* Active player indicator */
 .sap-player-wrapper.sap-active-player {
-    box-shadow: 0 8px 32px rgba(83, 130, 246, 0.2), 0 0 0 2px rgba(83, 130, 246, 0.3);
+    box-shadow: 0 8px 32px rgba(156, 163, 175, 0.2), 0 0 0 2px rgba(156, 163, 175, 0.3);
 }
 
 .sap-player-wrapper.sap-dark {
@@ -38,7 +38,7 @@
 }
 
 .sap-player-wrapper.sap-dark.sap-active-player {
-    box-shadow: 0 8px 32px rgba(83, 130, 246, 0.3), 0 0 0 2px rgba(83, 130, 246, 0.4);
+    box-shadow: 0 8px 32px rgba(156, 163, 175, 0.3), 0 0 0 2px rgba(156, 163, 175, 0.4);
 }
 
 /* Main Player Section */
